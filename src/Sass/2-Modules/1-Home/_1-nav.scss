@@ -1,6 +1,6 @@
 .navDiv {
   height: 80px;
-  max-width: 1300px;
+  max-width: 1000px;
   padding: 0 40px;
   margin: 0 auto;
   @include flex(row, space-between);
@@ -12,6 +12,10 @@
     & ul {
       @include flex(row);
       gap: 60px;
+
+      & * {
+        cursor: pointer;
+      }
     }
 
     & .authButtons {
@@ -20,6 +24,28 @@
       & > * {
         @include btn(30px, 80px, $borderRadius: 5px);
       }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .navDiv .links .authButtons > * {
+    @include btn(22px, 60px, 12px, 4px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .navDiv {
+    & .links {
+      & * {
+        display: none;
+      }
+      & .authButtons {
+        display: none;
+      }
+      background-image: url(/src/assets/menu.svg);
+      color: $richPurple;
+      @include size(25px);
     }
   }
 }

@@ -12,6 +12,17 @@
   align-items: $ai;
 }
 
+@mixin click() {
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+}
+
 // BUTTON
 @mixin btn($height, $width, $fontSize: 15px, $borderRadius: 10px) {
   background-color: $richPurple;
@@ -22,12 +33,5 @@
   border-radius: $borderRadius;
   cursor: pointer;
   @include flex();
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  &:active {
-    transform: scale(0.99);
-    box-shadow: none;
-  }
+  @include click();
 }
