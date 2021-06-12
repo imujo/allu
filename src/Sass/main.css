@@ -1,1 +1,180 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Prestij";
+  src: local("Prestij"), url("/src/assets/Prestij/Prestij_Regular_Demo.otf") format("opentype");
+}
+
+h2 {
+  font-family: "Prestij";
+}
+
+.navDiv {
+  height: 80px;
+  max-width: 1300px;
+  padding: 0 40px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navDiv .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 80px;
+}
+
+.navDiv .links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+
+.navDiv .links .authButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+.navDiv .links .authButtons > * {
+  background-color: #7033bf;
+  color: white;
+  height: 30px;
+  width: 80px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navDiv .links .authButtons > *:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.navDiv .links .authButtons > *:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.headerDiv {
+  height: calc(100vh - 80px);
+  width: 100%;
+  background-color: antiquewhite;
+}
+
+.logoDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logoDiv .logo {
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-size: 100% 100%;
+  background-image: url(/src/assets/logo.svg);
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.logoDiv .logoFont {
+  font-size: 25px;
+}
+/*# sourceMappingURL=main.css.map */

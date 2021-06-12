@@ -1,0 +1,25 @@
+.navDiv {
+  height: 80px;
+  max-width: 1300px;
+  padding: 0 40px;
+  margin: 0 auto;
+  @include flex(row, space-between);
+
+  & .links {
+    @include flex(row);
+    gap: 80px;
+
+    & ul {
+      @include flex(row);
+      gap: 60px;
+    }
+
+    & .authButtons {
+      @include flex(row);
+      gap: 40px;
+      & > * {
+        @include btn(30px, 80px, $borderRadius: 5px);
+      }
+    }
+  }
+}

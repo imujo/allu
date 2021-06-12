@@ -1,0 +1,33 @@
+// SIZE
+@mixin size($height, $width: $height) {
+  height: $height;
+  width: $width;
+}
+
+// FLEX
+@mixin flex($direction: column, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+// BUTTON
+@mixin btn($height, $width, $fontSize: 15px, $borderRadius: 10px) {
+  background-color: $richPurple;
+  color: white;
+  height: $height;
+  width: $width;
+  font-size: $fontSize;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  @include flex();
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+}
