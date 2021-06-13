@@ -46,6 +46,31 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: $blackPurple;
+  margin: 0;
+}
+
+.searchFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: $greyPurple;
+  margin: 0;
+}
+
+.categoryFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: $blackPurple;
+  margin: 0;
+}
+
 @media (max-width: 1400px) {
   h1 {
     font-size: 80px;

@@ -1,0 +1,30 @@
+.categoriesDiv {
+  @include flex();
+  gap: 25px;
+
+  .categoriesSplide {
+    width: 670px;
+  }
+}
+
+.categoryDiv {
+  @include size(58px, 198px);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: scale(0.86);
+  @include click(0, 3px, 7px, 0.88, 0.84, 1);
+  @include flex(row);
+  gap: 10px;
+
+  & .categoryIcon {
+    @include size(30px);
+    mask: url(/src/assets/camera.svg);
+    mask-size: contain;
+    background-color: $blackPurple;
+  }
+
+  & .divider {
+    @include size(30px, 2px);
+    background-color: $backgroundPurple;
+  }
+}

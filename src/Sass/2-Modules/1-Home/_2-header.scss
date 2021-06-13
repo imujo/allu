@@ -100,10 +100,12 @@
 .splide__arrow--prev {
   left: -30px;
   top: 25px;
+  background-color: transparent;
 }
 .splide__arrow--next {
   right: -30px;
   top: 25px;
+  background-color: transparent;
 }
 
 @media (max-width: 1400px) {

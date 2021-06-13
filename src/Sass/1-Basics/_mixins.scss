@@ -12,14 +12,26 @@
   align-items: $ai;
 }
 
-@mixin click() {
+// CLICK
+@mixin click(
+  $s1: 0,
+  $s2: 0,
+  $s3: 5px,
+  $scaleHover: 1.01,
+  $scaleActive: 0.99,
+  $shadowActive: 0
+) {
   &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transform: scale($scaleHover);
+    box-shadow: $s1 $s2 $s3 rgba(0, 0, 0, 0.3);
   }
   &:active {
-    transform: scale(0.99);
-    box-shadow: none;
+    transform: scale($scaleActive);
+    @if $shadowActive == 1 {
+      box-shadow: $s1 $s2 $s3 rgba(0, 0, 0, 0.15);
+    } @else {
+      box-shadow: none;
+    }
   }
 }
 

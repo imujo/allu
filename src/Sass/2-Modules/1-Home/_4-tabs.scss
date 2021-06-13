@@ -1,0 +1,9 @@
+.tabsDiv {
+  padding-top: 40px;
+  @include flex(row);
+  gap: 50px;
+  & * {
+    border-bottom: 2px solid $blackPurple;
+    cursor: pointer;
+  }
+}
