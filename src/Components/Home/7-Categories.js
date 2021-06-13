@@ -9,13 +9,12 @@ function Categories() {
         type: 'loop',
         autoWidth: true,
         drag: true,
-        gap: '20px',
+        gap: '10px',
         rewind: true,
         perMove: 1,
         pagination: false,
         focus: 'center',
         height: "65px",
-        // fixedHeight: '80px'
       } 
 
     return (

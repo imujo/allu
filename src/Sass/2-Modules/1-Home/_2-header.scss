@@ -1,5 +1,7 @@
 .headerDiv {
   height: calc(100vh - 80px);
+  min-height: 500px;
+
   width: 100%;
   max-width: 1700px;
   margin: 0 auto;
@@ -75,6 +77,13 @@
     & .slide:hover .countryName {
       visibility: visible;
     }
+
+    .splide__arrow--prev {
+      top: 25px;
+    }
+    .splide__arrow--next {
+      top: 25px;
+    }
   }
 
   & .imageDiv {
@@ -97,17 +106,6 @@
   }
 }
 
-.splide__arrow--prev {
-  left: -30px;
-  top: 25px;
-  background-color: transparent;
-}
-.splide__arrow--next {
-  right: -30px;
-  top: 25px;
-  background-color: transparent;
-}
-
 @media (max-width: 1400px) {
   .headerDiv {
     height: 75vh;
@@ -128,6 +126,15 @@
 
     .flag {
       @include size(40px, 65px);
+    }
+
+    .splide__arrow--prev {
+      top: 20px;
+      font-size: 12px;
+    }
+    .splide__arrow--next {
+      top: 20px;
+      font-size: 12px;
     }
   }
 
@@ -153,6 +160,10 @@
     height: 60vh;
     grid-template-columns: 100%;
     grid-template-rows: 75% 30%;
+
+    & .selectLanguageDiv {
+      margin-bottom: 50px;
+    }
 
     & h3 {
       @include flex();
@@ -180,6 +191,7 @@
     background-size: 300px;
     background-position: center;
     padding-top: 150px;
+    margin-bottom: 30px;
 
     & h1 {
       margin-bottom: 70px;
@@ -196,6 +208,15 @@
     .flag {
       @include size(30px, 50px);
       border-radius: 3px;
+    }
+
+    .splide__arrow--prev {
+      top: 15px;
+      font-size: 10px;
+    }
+    .splide__arrow--next {
+      top: 15px;
+      font-size: 10px;
     }
   }
   .splide__arrow--prev {

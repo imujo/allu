@@ -25,6 +25,16 @@ ul {
   list-style-type: none;
 }
 
+.splide__arrow--prev {
+  left: -30px;
+  background-color: transparent;
+}
+
+.splide__arrow--next {
+  right: -30px;
+  background-color: transparent;
+}
+
 @font-face {
   font-family: "Prestij";
   src: local("Prestij"), url("/src/assets/Prestij/Prestij_Regular_Demo.otf") format("opentype");
@@ -105,13 +115,22 @@ h5 {
     font-size: 10px;
   }
   h3 {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  h5 {
+    font-size: 15px;
   }
   li {
     font-size: 12px;
   }
   .logoFont {
     font-size: 20px;
+  }
+  .searchFont {
+    font-size: 14px;
+  }
+  .categoryFont {
+    font-size: 12px;
   }
 }
 
@@ -132,7 +151,7 @@ h5 {
 
 .navDiv {
   height: 80px;
-  max-width: 1000px;
+  max-width: 1350px;
   padding: 0 40px;
   margin: 0 auto;
   display: -webkit-box;
@@ -296,6 +315,7 @@ h5 {
 
 .headerDiv {
   height: calc(100vh - 80px);
+  min-height: 500px;
   width: 100%;
   max-width: 1700px;
   margin: 0 auto;
@@ -434,6 +454,14 @@ h5 {
   visibility: visible;
 }
 
+.headerDiv .selectLanguageDiv .splide__arrow--prev {
+  top: 25px;
+}
+
+.headerDiv .selectLanguageDiv .splide__arrow--next {
+  top: 25px;
+}
+
 .headerDiv .imageDiv {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
@@ -472,18 +500,6 @@ h5 {
           box-shadow: 7px 5px 7px rgba(0, 0, 0, 0.3);
 }
 
-.splide__arrow--prev {
-  left: -30px;
-  top: 25px;
-  background-color: transparent;
-}
-
-.splide__arrow--next {
-  right: -30px;
-  top: 25px;
-  background-color: transparent;
-}
-
 @media (max-width: 1400px) {
   .headerDiv {
     height: 75vh;
@@ -503,6 +519,14 @@ h5 {
   .headerDiv .selectLanguageDiv .flag {
     height: 40px;
     width: 65px;
+  }
+  .headerDiv .selectLanguageDiv .splide__arrow--prev {
+    top: 20px;
+    font-size: 12px;
+  }
+  .headerDiv .selectLanguageDiv .splide__arrow--next {
+    top: 20px;
+    font-size: 12px;
   }
   .headerDiv .imageDiv .purpleBlock {
     height: 525px;
@@ -528,6 +552,9 @@ h5 {
         grid-template-columns: 100%;
     -ms-grid-rows: 75% 30%;
         grid-template-rows: 75% 30%;
+  }
+  .headerDiv .selectLanguageDiv {
+    margin-bottom: 50px;
   }
   .headerDiv h3 {
     display: -webkit-box;
@@ -588,6 +615,7 @@ h5 {
     background-size: 300px;
     background-position: center;
     padding-top: 150px;
+    margin-bottom: 30px;
   }
   .headerDiv .titleDiv .backgroundImage h1 {
     margin-bottom: 70px;
@@ -602,6 +630,14 @@ h5 {
     height: 30px;
     width: 50px;
     border-radius: 3px;
+  }
+  .headerDiv .selectLanguageDiv .splide__arrow--prev {
+    top: 15px;
+    font-size: 10px;
+  }
+  .headerDiv .selectLanguageDiv .splide__arrow--next {
+    top: 15px;
+    font-size: 10px;
   }
   .splide__arrow--prev {
     height: 20px;
@@ -685,6 +721,7 @@ h5 {
 }
 
 .searchDiv {
+  background-color: white;
   height: 50px;
   width: 300px;
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -730,6 +767,22 @@ h5 {
   -webkit-mask: url(/src/assets/search.svg);
           mask: url(/src/assets/search.svg);
   background-color: #837e9f;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+
+@media (max-width: 1000px) {
+  .searchDiv {
+    height: 40px;
+    width: 240px;
+    margin: 60px auto;
+  }
+  .searchDiv .searchIcon {
+    height: 16px;
+    width: 16px;
+  }
 }
 
 .categoriesDiv {
@@ -750,7 +803,7 @@ h5 {
 }
 
 .categoriesDiv .categoriesSplide {
-  width: 670px;
+  width: 630px;
 }
 
 .categoryDiv {
@@ -805,6 +858,40 @@ h5 {
   height: 30px;
   width: 2px;
   background-color: #ede9fe;
+}
+
+@media (max-width: 1000px) {
+  .categoriesDiv .categoriesSplide {
+    width: 430px;
+  }
+  .categoriesDiv .categoriesSplide .splide__arrow--prev {
+    top: 20px;
+    left: -20px;
+    font-size: 12px;
+  }
+  .categoriesDiv .categoriesSplide .splide__arrow--next {
+    top: 20px;
+    right: -20px;
+    font-size: 12px;
+  }
+  .categoryDiv {
+    height: 40px;
+    width: 136px;
+    gap: 7px;
+  }
+  .categoryDiv .categoryIcon {
+    height: 20px;
+    width: 20px;
+  }
+  .categoryDiv .divider {
+    height: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .categoriesDiv .categoriesSplide {
+    width: 160px;
+  }
 }
 
 .logoDiv {

@@ -3,7 +3,7 @@
   gap: 25px;
 
   .categoriesSplide {
-    width: 670px;
+    width: 630px;
   }
 }
 
@@ -26,5 +26,40 @@
   & .divider {
     @include size(30px, 2px);
     background-color: $backgroundPurple;
+  }
+}
+
+@media (max-width: 1000px) {
+  .categoriesDiv .categoriesSplide {
+    width: 430px;
+
+    .splide__arrow--prev {
+      top: 20px;
+      left: -20px;
+      font-size: 12px;
+    }
+    .splide__arrow--next {
+      top: 20px;
+      right: -20px;
+      font-size: 12px;
+    }
+  }
+  .categoryDiv {
+    @include size(40px, 136px);
+    gap: 7px;
+
+    & .categoryIcon {
+      @include size(20px);
+    }
+
+    & .divider {
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .categoriesDiv .categoriesSplide {
+    width: 160px;
   }
 }
