@@ -2,8 +2,27 @@
   padding-top: 40px;
   @include flex(row);
   gap: 50px;
+  position: sticky;
+  top: -10px;
+  z-index: 2;
   & * {
     border-bottom: 2px solid $blackPurple;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 1000px) {
+  .tabsDiv {
+    top: -18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .tabsDiv {
+    gap: 20px;
+
+    .tabsDiv.fixed.scrolled {
+      background-color: white;
+    }
   }
 }

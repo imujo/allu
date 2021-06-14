@@ -21,6 +21,7 @@
   $scaleActive: 0.99,
   $shadowActive: 0
 ) {
+  cursor: pointer;
   &:hover {
     transform: scale($scaleHover);
     box-shadow: $s1 $s2 $s3 rgba(0, 0, 0, 0.3);

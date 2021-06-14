@@ -1,25 +1,28 @@
-import React from 'react'
 import Logo from '../Random/Logo'
 
 function Nav() {
+
+
     return (
-        <div className='navDiv' >
-            
-            {/* Logo */}
-            <Logo />
+        <div className='navShadow' >
+            <div className="navDiv">
+                {/* Logo */}
+                <Logo />
 
-            {/* Links */}
-            <div className="links">
-                <ul>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
+                {/* Links */}
+                <div className="links">
+                    <ul>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
 
-                <div className="authButtons">
-                    <button>Sign Up</button>
-                    <button>Log In</button>
+                    <div className="authButtons">
+                        <button>Sign Up</button>
+                        <button>Log In</button>
+                    </div>
                 </div>
             </div>
+            
             
         </div>
     )

@@ -9,6 +9,7 @@
 
 .categoryDiv {
   @include size(58px, 198px);
+  background-color: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transform: scale(0.86);

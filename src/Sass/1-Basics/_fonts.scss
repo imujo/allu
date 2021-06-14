@@ -54,6 +54,22 @@ h5 {
   margin: 0;
 }
 
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: $blackPurple;
+  margin: 0;
+}
+
+.oneLinerFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: $blackPurple;
+  margin: 0;
+}
+
 .searchFont {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
@@ -71,6 +87,14 @@ h5 {
   margin: 0;
 }
 
+.categoryImageFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  color: rgba(#ede9fe, 0.7);
+  font-weight: 500;
+  margin: 0;
+}
+
 @media (max-width: 1400px) {
   h1 {
     font-size: 80px;
@@ -83,6 +107,9 @@ h5 {
   }
   h5 {
     font-size: 15px;
+  }
+  h6 {
+    font-size: 25px;
   }
   li {
     font-size: 12px;
@@ -107,6 +134,12 @@ h5 {
   }
   h3 {
     font-size: 13px;
+  }
+  h5 {
+    font-size: 13px;
+  }
+  h6 {
+    font-size: 20px;
   }
   .logoFont {
     font-size: 18px;

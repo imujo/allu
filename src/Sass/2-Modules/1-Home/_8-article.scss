@@ -1,0 +1,71 @@
+.articleDiv {
+  @include size(285px, 340px);
+  @include click($s2: 2px, $s3: 5px, $shadowActive: 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: $backgroundPurple;
+
+  & .articleImage {
+    @include size(200px, 340px);
+  }
+
+  & .imageOverlay {
+    @include size(200px, 340px);
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3)
+    );
+    position: absolute;
+    top: 0;
+  }
+
+  & .articleCategory {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  & .articleText {
+    height: 85px;
+    box-sizing: border-box;
+    width: 100%;
+    @include flex($ai: flex-start, $jc: space-around);
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .articleDiv {
+    @include size(235px, 280px);
+
+    & .articleImage {
+      @include size(165px, 280px);
+    }
+    & .imageOverlay {
+      @include size(165px, 280px);
+    }
+    & .articleText {
+      height: 70px;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .articleDiv {
+    @include size(168px, 200px);
+
+    & .articleImage {
+      @include size(118px, 200px);
+    }
+    & .imageOverlay {
+      @include size(118px, 200px);
+    }
+    & .articleText {
+      height: 50px;
+      padding: 5px;
+      padding-left: 10px;
+    }
+  }
+}
