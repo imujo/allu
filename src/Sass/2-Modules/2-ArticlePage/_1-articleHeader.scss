@@ -1,0 +1,95 @@
+.articleHeaderDiv {
+  height: calc(100vh - 80px);
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 20% 40%;
+  grid-template-areas:
+    "title articleImage"
+    "stats articleImage"
+    "comments articleImage";
+
+  & .articlePageTitleSection {
+    grid-area: title;
+    @include flex($ai: start);
+    padding-left: 70px;
+
+    & .user {
+      @include flex($direction: row);
+      gap: 40px;
+      margin-left: 20px;
+    }
+  }
+
+  & .articleStatsSection {
+    grid-area: stats;
+    @include flex($ai: "start");
+    padding-left: 90px;
+  }
+
+  & .comments {
+    grid-area: comments;
+    @include flex($ai: "start");
+    padding-left: 90px;
+  }
+
+  & .articlePageImageSection {
+    grid-area: articleImage;
+    @include flex();
+    & .articlePageImage {
+      @include size(500px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+
+      border: 30px solid $lightPurple;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .articleHeaderDiv {
+    height: 700px;
+
+    & .articlePageImageSection .articlePageImage {
+      @include size(400px);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .articleHeaderDiv {
+    @include flex($jc: space-around);
+    height: 600px;
+
+    & .articlePageTitleSection {
+      @include flex();
+      padding-left: 0;
+
+      & .user {
+        gap: 5px;
+        @include flex();
+        margin-left: 0;
+      }
+    }
+
+    & .articleStatsSection {
+      padding-left: 0;
+    }
+
+    & .comments {
+      padding-left: 0;
+    }
+
+    & .articlePageImageSection .articlePageImage {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .articleHeaderDiv {
+    height: 500px;
+  }
+}

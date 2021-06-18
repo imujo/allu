@@ -1,0 +1,70 @@
+.commentsDiv {
+  @include size(290px, 540px);
+  border: 3px solid $lightPurple;
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+  padding-left: 20px;
+
+  & .commentTitleFont {
+    @include flex($ai: start);
+  }
+
+  & .commentsList {
+    @include flex($jc: start, $ai: flex-start);
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  & .comment {
+    @include flex(row);
+    gap: 20px;
+
+    & .userIcon {
+      border-radius: 20px;
+      @include size(40px);
+      @include flex();
+      background-color: $lightPurple;
+    }
+
+    & .commentText {
+      background-color: $backgroundPurple;
+      padding: 5px 15px;
+      border-radius: 7px;
+    }
+  }
+
+  & .center {
+    @include flex($ai: start);
+  }
+  & .leaveComment {
+    border: 2px solid $blackPurple;
+    border-radius: 15px;
+    @include size(80%, 90%);
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1400px) {
+  .commentsDiv {
+    @include size(232px, 380px);
+
+    & .comment .userIcon {
+      @include size(30px);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .commentsDiv {
+    @include size(170px, 247px);
+    padding: 10px 20px;
+
+    & .commentsList {
+      gap: 25px;
+    }
+  }
+}

@@ -7,6 +7,10 @@
 
   & .articleImage {
     @include size(200px, 340px);
+    box-shadow: inset 0 -20px 50px -30px rgba(0, 0, 0, 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35%;
   }
 
   & .imageOverlay {
@@ -32,6 +36,7 @@
     width: 100%;
     @include flex($ai: flex-start, $jc: space-around);
     padding: 10px;
+    background-color: darken($backgroundPurple, 6%);
   }
 }
 

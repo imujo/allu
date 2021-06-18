@@ -1,0 +1,31 @@
+.statsDiv {
+  @include size(110px, 375px);
+  background-color: $backgroundPurple;
+  @include flex($direction: row, $jc: space-around);
+  padding: 0 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  & .divider {
+    @include size(70%, 2px);
+    background-color: $greyPurple;
+    opacity: 10%;
+  }
+
+  & * {
+    @include flex();
+    gap: 10px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .statsDiv {
+    @include size(88px, 300px);
+  }
+}
+
+@media (max-width: 500px) {
+  .statsDiv {
+    @include size(60px, 230px);
+  }
+}

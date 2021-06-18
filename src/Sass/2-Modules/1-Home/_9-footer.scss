@@ -1,0 +1,7 @@
+.footerDiv {
+  height: 70px;
+  background-color: $backgroundPurple;
+  padding: 12px;
+  box-sizing: border-box;
+  @include flex($jc: space-around);
+}
