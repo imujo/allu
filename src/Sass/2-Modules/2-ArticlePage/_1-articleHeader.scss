@@ -12,7 +12,7 @@
 
   & .articlePageTitleSection {
     grid-area: title;
-    @include flex($ai: start);
+    @include flex($ai: flex-start);
     padding-left: 70px;
 
     & .user {
@@ -24,13 +24,13 @@
 
   & .articleStatsSection {
     grid-area: stats;
-    @include flex($ai: "start");
+    @include flex($ai: flex-start);
     padding-left: 90px;
   }
 
   & .comments {
     grid-area: comments;
-    @include flex($ai: "start");
+    @include flex($ai: flex-start);
     padding-left: 90px;
   }
 

@@ -33,7 +33,7 @@
       padding-left: 70px;
       gap: 10px;
       box-sizing: border-box;
-      @include flex($ai: start);
+      @include flex($ai: flex-start);
 
       & .welcome {
         font-size: 18px;

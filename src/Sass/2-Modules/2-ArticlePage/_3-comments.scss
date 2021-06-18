@@ -6,16 +6,26 @@
   padding-left: 20px;
 
   & .commentTitleFont {
-    @include flex($ai: start);
+    @include flex($ai: flex-start);
   }
 
   & .commentsList {
-    @include flex($jc: start, $ai: flex-start);
+    @include flex($jc: flex-start, $ai: flex-start);
     height: 100%;
     width: 100%;
     overflow: auto;
     gap: 20px;
     box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #b9aee685;
+      border-radius: 10px;
+      width: 5px;
+    }
   }
 
   & .comment {
@@ -37,7 +47,7 @@
   }
 
   & .center {
-    @include flex($ai: start);
+    @include flex($ai: flex-start);
   }
   & .leaveComment {
     border: 2px solid $blackPurple;

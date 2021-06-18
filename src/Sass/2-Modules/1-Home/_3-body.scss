@@ -3,5 +3,5 @@
   background-image: url(/src/assets/bodyBackground.png);
   background-repeat: no-repeat;
   background-size: cover;
-  @include flex($jc: start);
+  @include flex($jc: flex-start);
 }
