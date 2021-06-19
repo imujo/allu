@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../Home/2-Nav'
 import ArticleHeader from './2-ArticleHeader'
+import ArticleText from './5-ArticleText'
 
 function ArticlePage() {
     return (
@@ -11,6 +12,9 @@ function ArticlePage() {
 
             {/* Article Header */}
             <ArticleHeader />
+
+            {/* Article Text */}
+            <ArticleText />
 
         </div>
     )

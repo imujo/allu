@@ -1,0 +1,16 @@
+.articleTextBackground {
+  background-image: url(/src/assets/articleTextBackground.png);
+  background-repeat: no-repeat;
+}
+.articleTextDiv {
+  min-height: 500px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px;
+}
+
+@media (max-width: 500px) {
+  .articleTextDiv {
+    padding: 80px;
+  }
+}

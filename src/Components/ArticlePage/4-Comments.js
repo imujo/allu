@@ -1,12 +1,11 @@
 import React from 'react'
-import { Scrollbars } from 'react-custom-scrollbars';
+import { AiOutlineSend } from 'react-icons/ai';
 
 
 function Comments() {
     return (
         <div className='commentsDiv' >
             <div className='commentTitleFont'>Comments</div>
-            <Scrollbars style={{ width: "100%", height: "100%" }}>
 
                 <div className="commentsList">
                     {
@@ -22,10 +21,10 @@ function Comments() {
                     
 
                 </div>
-            </Scrollbars>
 
             <div className='center'>
                 <input type='text' className="leaveComment" placeholder='Comment'></input>
+                <AiOutlineSend className='commentIcon' />
             </div>
         </div>
    

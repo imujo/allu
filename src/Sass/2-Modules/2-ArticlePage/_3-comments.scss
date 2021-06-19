@@ -47,13 +47,17 @@
   }
 
   & .center {
-    @include flex($ai: flex-start);
+    @include flex($direction: row, $jc: space-between);
+    @include size(60%, 90%);
+    border-bottom: 1px solid $blackPurple;
   }
+
+  & .commentIcon {
+    cursor: pointer;
+  }
+
   & .leaveComment {
-    border: 2px solid $blackPurple;
-    border-radius: 15px;
-    @include size(80%, 90%);
-    padding-left: 15px;
+    width: 90%;
     box-sizing: border-box;
   }
 }

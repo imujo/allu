@@ -105,6 +105,12 @@ h6 {
   margin: 0;
 }
 
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: $blackPurple;
+}
+
 @media (max-width: 1400px) {
   h1 {
     font-size: 80px;
