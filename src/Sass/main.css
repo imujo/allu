@@ -1097,6 +1097,7 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 35%;
+  background-image: url(/src/assets/astronaut.svg);
 }
 
 .articleDiv .imageOverlay {
@@ -1402,6 +1403,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
+  background-image: url(/src/assets/astronaut.svg);
   border: 30px solid #b9aee6;
 }
 
