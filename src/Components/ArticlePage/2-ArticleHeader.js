@@ -25,7 +25,7 @@ function ArticleHeader() {
                 <Comments />
             </div>
             <div className="articlePageImageSection">
-                <div className="articlePageImage" style={{backgroundImage: `url(${background})`}} ></div>
+                <div className="articlePageImage"  ></div>
             </div>
             
         </div>
@@ -33,3 +33,5 @@ function ArticleHeader() {
 }
 
 export default ArticleHeader
+
+// style={{backgroundImage: `url(${background})`}}

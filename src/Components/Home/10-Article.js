@@ -8,7 +8,7 @@ function Article({type}) {
 
     return (
         <div className='articleDiv'>
-            <div className='articleImage' style={{backgroundImage: `url(${background})`  }} />
+            <div className='articleImage'  />
             {/* <div className="imageOverlay"></div> */}
 
             <div className="categoryImageFont articleCategory">Category</div>
@@ -47,3 +47,5 @@ function Article({type}) {
 }
 
 export default Article
+
+// style={{backgroundImage: `url(${background})`  }}
