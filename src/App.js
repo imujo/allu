@@ -9,7 +9,7 @@ function App() {
       
         <Switch>
           <Route path='/article'>
-            <ArticlePage />
+            <ArticlePage type='audio' />
           </Route>
           <Route path='/'>
             <Home />

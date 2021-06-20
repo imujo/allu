@@ -37,7 +37,7 @@ function Header() {
                 <Splide options={options}>
                     {
                         [1,2,3,4,5,6,7,8,9,10].map((val, i)=>{
-                            return <SplideSlide className='slide'>
+                            return <SplideSlide className='slide' key={i}>
                                 <div className="flag"></div>
                                 <h4 className='countryName'>Croatia</h4>
                             </SplideSlide>

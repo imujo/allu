@@ -1,6 +1,7 @@
 .articleDiv {
   @include size(285px, 340px);
   @include click($s2: 2px, $s3: 5px, $shadowActive: 1);
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   background-color: $backgroundPurple;
@@ -34,9 +35,40 @@
     height: 85px;
     box-sizing: border-box;
     width: 100%;
-    @include flex($ai: flex-start, $jc: space-around);
     padding: 10px;
     background-color: darken($backgroundPurple, 6%);
+    @include flex(row, $jc: space-between);
+
+    & .text {
+      @include flex($ai: flex-start, $jc: space-around);
+      width: 80%;
+      height: 100%;
+    }
+
+    & .playAudio {
+      @include size(40px);
+      background-color: white;
+      border-radius: 90px;
+      @include flex();
+      @include click();
+    }
+  }
+
+  & .audioTrack {
+    @include size(35px, 100%);
+    background-color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    box-sizing: border-box;
+    @include flex(row, space-around);
+    & .emptyTrack {
+      @include size(2px, 80%);
+      background-color: $backgroundPurple;
+      & .fullTrack {
+        height: 2px;
+        background-color: darken($backgroundPurple, 15%);
+      }
+    }
   }
 }
 
@@ -71,6 +103,10 @@
       height: 50px;
       padding: 5px;
       padding-left: 10px;
+
+      & .playAudio {
+        @include size(30px);
+      }
     }
   }
 }

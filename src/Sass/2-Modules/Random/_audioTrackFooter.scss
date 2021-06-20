@@ -1,0 +1,43 @@
+.audioTrackFooterDiv {
+  position: fixed;
+  bottom: 0;
+  @include size(100px, 100%);
+  background-color: $backgroundPurple;
+  @include flex();
+  gap: 15px;
+
+  & .playAudio {
+    @include size(40px);
+    background-color: white;
+    border-radius: 90px;
+    @include flex();
+    @include click($s3: 5px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  & .track {
+    @include flex(row);
+    gap: 20px;
+  }
+  & .trackEmpty {
+    @include size(5px, 400px);
+    background-color: $lightPurple;
+
+    & .trackFull {
+      height: 5px;
+      background-color: $greyPurple;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .audioTrackFooterDiv .track .trackEmpty {
+    @include size(4px, 200px);
+    & .trackFull {
+      height: 4px;
+    }
+  }
+  .audioTrackFooterDiv .playAudio {
+    @include size(30px);
+  }
+}

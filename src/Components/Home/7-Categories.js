@@ -23,7 +23,7 @@ function Categories() {
             <Splide options={options} className='categoriesSplide'>
                 {
                     [1,1,1,1,1,1,1].map((val, i)=>{
-                        return <SplideSlide>
+                        return <SplideSlide key={i} >
                             <Category />
                         </SplideSlide>
                     })

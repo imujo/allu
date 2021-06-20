@@ -156,6 +156,13 @@ h6 {
   margin: 0;
 }
 
+.switchAuthFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #837e9f;
+}
+
 p {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
@@ -882,6 +889,7 @@ p {
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {
@@ -1111,6 +1119,24 @@ p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  padding: 10px;
+  background-color: #d5ccfd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.articleDiv .articleText .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1123,8 +1149,77 @@ p {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 10px;
-  background-color: #d5ccfd;
+  width: 80%;
+  height: 100%;
+}
+
+.articleDiv .articleText .playAudio {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.articleDiv .articleText .playAudio:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.articleDiv .articleText .playAudio:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.articleDiv .audioTrack {
+  height: 35px;
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.articleDiv .audioTrack .emptyTrack {
+  height: 2px;
+  width: 80%;
+  background-color: #ede9fe;
+}
+
+.articleDiv .audioTrack .emptyTrack .fullTrack {
+  height: 2px;
+  background-color: #b1a0fb;
 }
 
 @media (max-width: 1400px) {
@@ -1163,6 +1258,10 @@ p {
     height: 50px;
     padding: 5px;
     padding-left: 10px;
+  }
+  .articleDiv .articleText .playAudio {
+    height: 30px;
+    width: 30px;
   }
 }
 
@@ -1653,6 +1752,360 @@ p {
     height: 35px;
     width: 35px;
     margin-right: 0;
+  }
+}
+
+.authDiv {
+  height: 700px;
+  width: 1000px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -500px;
+  z-index: 3;
+  -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+  background-image: url(/src/assets/authBackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authDiv .title {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authDiv .inputs {
+  height: 70%;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authDiv .inputs input {
+  width: 100%;
+  height: 40px;
+  -webkit-box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.authDiv .inputs input::-webkit-input-placeholder {
+  color: #837e9f;
+}
+
+.authDiv .inputs input:-ms-input-placeholder {
+  color: #837e9f;
+}
+
+.authDiv .inputs input::-ms-input-placeholder {
+  color: #837e9f;
+}
+
+.authDiv .inputs input::placeholder {
+  color: #837e9f;
+}
+
+.authDiv .inputs .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
+  gap: 40px;
+}
+
+.authDiv .inputs input[type="submit"] {
+  background-color: #7033bf;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.authDiv .inputs input[type="submit"]:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.authDiv .inputs input[type="submit"]:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.authDiv .switch {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.authDiv .switch .bold {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.authDiv .exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .authDiv {
+    height: 600px;
+    width: 400px;
+    margin-top: -300px;
+    margin-left: -200px;
+  }
+  .authDiv .inputs {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .authDiv {
+    height: 80vh;
+    width: 250px;
+    max-height: 650px;
+    margin-top: -40vh;
+    margin-left: -125px;
+  }
+  .authDiv[type="login"] {
+    max-height: 400px;
+  }
+  .authDiv .inputs .name {
+    gap: 20px;
+  }
+  .authDiv .inputs input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .authDiv .inputs input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .authDiv .inputs input::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .authDiv .inputs input::placeholder {
+    font-size: 12px;
+  }
+  .authDiv .inputs input[type="submit"] {
+    background-color: #7033bf;
+    color: white;
+    height: 30px;
+    width: 75px;
+    font-size: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  .authDiv .inputs input[type="submit"]:hover {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  .authDiv .inputs input[type="submit"]:active {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .authDiv .exit {
+    right: 10px;
+    top: 10px;
+  }
+}
+
+.audioTrackFooterDiv {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #ede9fe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.audioTrackFooterDiv .playAudio {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.audioTrackFooterDiv .playAudio:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.audioTrackFooterDiv .playAudio:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.audioTrackFooterDiv .track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.audioTrackFooterDiv .trackEmpty {
+  height: 5px;
+  width: 400px;
+  background-color: #b9aee6;
+}
+
+.audioTrackFooterDiv .trackEmpty .trackFull {
+  height: 5px;
+  background-color: #837e9f;
+}
+
+@media (max-width: 500px) {
+  .audioTrackFooterDiv .track .trackEmpty {
+    height: 4px;
+    width: 200px;
+  }
+  .audioTrackFooterDiv .track .trackEmpty .trackFull {
+    height: 4px;
+  }
+  .audioTrackFooterDiv .playAudio {
+    height: 30px;
+    width: 30px;
   }
 }
 /*# sourceMappingURL=main.css.map */

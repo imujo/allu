@@ -1,0 +1,104 @@
+.authDiv {
+  @include size(700px, 1000px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -500px;
+  z-index: 3;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+
+  background-image: url(/src/assets/authBackground.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include flex($jc: space-around);
+  & .title {
+    height: 20%;
+    @include flex();
+  }
+  & .inputs {
+    height: 70%;
+    width: 40%;
+    @include flex($jc: space-around);
+
+    & input {
+      width: 100%;
+      height: 40px;
+      box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 0 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: $greyPurple;
+      }
+    }
+
+    & .name {
+      @include flex($direction: row, $ai: space-around);
+      gap: 40px;
+    }
+    & input[type="submit"] {
+      @include btn(40px, 100px, 18px);
+    }
+  }
+
+  & .switch {
+    height: 10%;
+    @include flex(row);
+    gap: 3px;
+    & .bold {
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  & .exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1100px) {
+  .authDiv {
+    @include size(600px, 400px);
+    margin-top: -300px;
+    margin-left: -200px;
+    & .inputs {
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .authDiv {
+    @include size(80vh, 250px);
+    max-height: 650px;
+    margin-top: -40vh;
+    margin-left: -125px;
+
+    &[type="login"] {
+      max-height: 400px;
+    }
+
+    & .inputs .name {
+      gap: 20px;
+    }
+
+    & .inputs input {
+      &::placeholder {
+        font-size: 12px;
+      }
+      &[type="submit"] {
+        @include btn(30px, 75px, 15px, 7px);
+      }
+    }
+    & .exit {
+      right: 10px;
+      top: 10px;
+    }
+  }
+}

@@ -4,15 +4,15 @@ import Article from './10-Article'
 function ArticleList() {
     return (
         <div className='articleListDiv' >
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
+            <Article type='audio'/>
         </div>
     )
 }
