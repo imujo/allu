@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/allu/static/css/main.37505629.chunk.css",
+    "main.js": "/allu/static/js/main.ad4f7e67.chunk.js",
+    "main.js.map": "/allu/static/js/main.ad4f7e67.chunk.js.map",
+    "runtime-main.js": "/allu/static/js/runtime-main.ce63925d.js",
+    "runtime-main.js.map": "/allu/static/js/runtime-main.ce63925d.js.map",
+    "static/css/2.11c54b2c.chunk.css": "/allu/static/css/2.11c54b2c.chunk.css",
+    "static/js/2.c62af1ac.chunk.js": "/allu/static/js/2.c62af1ac.chunk.js",
+    "static/js/2.c62af1ac.chunk.js.map": "/allu/static/js/2.c62af1ac.chunk.js.map",
+    "static/js/3.0e122fcc.chunk.js": "/allu/static/js/3.0e122fcc.chunk.js",
+    "static/js/3.0e122fcc.chunk.js.map": "/allu/static/js/3.0e122fcc.chunk.js.map",
+    "index.html": "/allu/index.html",
+    "static/css/2.11c54b2c.chunk.css.map": "/allu/static/css/2.11c54b2c.chunk.css.map",
+    "static/css/main.37505629.chunk.css.map": "/allu/static/css/main.37505629.chunk.css.map",
+    "static/js/2.c62af1ac.chunk.js.LICENSE.txt": "/allu/static/js/2.c62af1ac.chunk.js.LICENSE.txt",
+    "static/media/main.css": "/allu/static/media/titleBackground.4cd94656.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce63925d.js",
+    "static/css/2.11c54b2c.chunk.css",
+    "static/js/2.c62af1ac.chunk.js",
+    "static/css/main.37505629.chunk.css",
+    "static/js/main.ad4f7e67.chunk.js"
+  ]
+}
