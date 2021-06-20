@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/allu/static/css/main.442962c2.chunk.css",
+    "main.css": "/allu/static/css/main.43beaf4a.chunk.css",
     "main.js": "/allu/static/js/main.17115c7f.chunk.js",
     "main.js.map": "/allu/static/js/main.17115c7f.chunk.js.map",
     "runtime-main.js": "/allu/static/js/runtime-main.ce63925d.js",
@@ -12,7 +12,7 @@
     "static/js/3.0e122fcc.chunk.js.map": "/allu/static/js/3.0e122fcc.chunk.js.map",
     "index.html": "/allu/index.html",
     "static/css/2.11c54b2c.chunk.css.map": "/allu/static/css/2.11c54b2c.chunk.css.map",
-    "static/css/main.442962c2.chunk.css.map": "/allu/static/css/main.442962c2.chunk.css.map",
+    "static/css/main.43beaf4a.chunk.css.map": "/allu/static/css/main.43beaf4a.chunk.css.map",
     "static/js/2.255252e6.chunk.js.LICENSE.txt": "/allu/static/js/2.255252e6.chunk.js.LICENSE.txt",
     "static/media/main.css": "/allu/static/media/titleBackground.4cd94656.png"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.ce63925d.js",
     "static/css/2.11c54b2c.chunk.css",
     "static/js/2.255252e6.chunk.js",
-    "static/css/main.442962c2.chunk.css",
+    "static/css/main.43beaf4a.chunk.css",
     "static/js/main.17115c7f.chunk.js"
   ]
 }
