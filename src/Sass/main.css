@@ -500,8 +500,6 @@ p {
 }
 
 .headerDiv .selectLanguageDiv .flag {
-  background: white url(/src/assets/croatiaFlag.svg) no-repeat center;
-  background-size: contain;
   height: 50px;
   width: 80px;
   border-radius: 7px;
@@ -819,8 +817,11 @@ p {
 }
 
 .tabsDiv * {
-  border-bottom: 2px solid #280b38;
   cursor: pointer;
+}
+
+.tabsDiv .selectedTab {
+  border-bottom: 2px solid #280b38;
 }
 
 @media (max-width: 1000px) {
@@ -929,8 +930,8 @@ p {
   height: 58px;
   width: 198px;
   background-color: white;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   -webkit-transform: scale(0.86);
           transform: scale(0.86);
@@ -942,12 +943,15 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   gap: 10px;
 }
 
@@ -973,12 +977,21 @@ p {
   -webkit-mask-size: contain;
           mask-size: contain;
   background-color: #280b38;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .categoryDiv .divider {
   height: 30px;
   width: 2px;
   background-color: #ede9fe;
+}
+
+.selected {
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 @media (max-width: 1000px) {
@@ -999,6 +1012,7 @@ p {
     height: 40px;
     width: 136px;
     gap: 7px;
+    padding-left: 10px;
   }
   .categoryDiv .categoryIcon {
     height: 20px;
@@ -1031,6 +1045,14 @@ p {
   -webkit-column-gap: 100px;
           column-gap: 100px;
   row-gap: 130px;
+  position: relative;
+}
+
+.articleListDiv h2 {
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 @media (max-width: 1400px) {

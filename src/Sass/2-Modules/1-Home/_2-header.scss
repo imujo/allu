@@ -57,8 +57,6 @@
       margin-left: 10px;
     }
     & .flag {
-      background: white url(/src/assets/croatiaFlag.svg) no-repeat center;
-      background-size: contain;
       @include size(50px, 80px);
       border-radius: 7px;
     }

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import Flag from './Flag'
+import {BackendContext} from '../../State/BackendState'
 
 function Header() {
 
@@ -13,10 +15,16 @@ function Header() {
         perMove: 1,
         pagination: false,
         focus: 'center',
-        start: 2,
+        start: 4,
         height: "auto",
 
-      } 
+    } 
+    
+    const {languageSelectedGlobal, languagesGlobal} = useContext(BackendContext);
+    const [languageSelected, setlanguageSelected] = languageSelectedGlobal
+    const [languages,] = languagesGlobal
+
+      
 
     return (
         <div className='headerDiv'>
@@ -33,17 +41,20 @@ function Header() {
 
             {/* Select Language div */}
             <div className="selectLanguageDiv">
-                <h3>Select a language:</h3>
+                <h3>Select a language: ({languageSelected})</h3>
+                
                 <Splide options={options}>
                     {
-                        [1,2,3,4,5,6,7,8,9,10].map((val, i)=>{
+                        languages.map((language, i)=>{
                             return <SplideSlide className='slide' key={i}>
-                                <div className="flag"></div>
-                                <h4 className='countryName'>Croatia</h4>
+                                
+                                <Flag language={language} languageSelected={setlanguageSelected} />
                             </SplideSlide>
                         })
                     }
                 </Splide>
+               
+                
             </div>
 
 

@@ -4,11 +4,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Sass/main.css'
 import {HashRouter as Router} from 'react-router-dom'
+import {BackendContextProvider} from './State/BackendState'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router basename={process.env.PUBLIC_URL} >
-      <App />
+      <BackendContextProvider>
+        <App />
+      </BackendContextProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

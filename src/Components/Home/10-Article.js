@@ -1,27 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsFillPlayFill } from 'react-icons/bs';
 
 
-function Article({type}) {
+function Article({title, oneLiner, category, type, language, articleText, views, likes, comments}) {
 
-    const background = '/static/media/astronaut.9f78152b.svg'
+    const [isPlaying, setisPlaying] = useState(false)
 
     return (
         <div className='articleDiv'>
             <div className='articleImage'  />
-            {/* <div className="imageOverlay"></div> */}
 
-            <div className="categoryImageFont articleCategory">Category</div>
+            <div className="categoryImageFont articleCategory">{category}</div>
 
             <div className="articleText">
                 <div className="text">
-                    <h6>Article Title</h6>
-                    <div className="oneLinerFont oneLiner">One-Liner</div>
+                    <h6>{title}</h6>
+                    <div className="oneLinerFont oneLiner">{`"${oneLiner}"`}</div>
                 </div>
 
                 {
-                    type === 'audio' ?
-                        <div className="playAudio">
+                    type === 'listen' ?
+                        <div className="playAudio" onClick={()=>setisPlaying(!isPlaying)} >
                             <BsFillPlayFill size='25px' color='#d5ccfd' />
                         </div>
                     :
@@ -31,7 +30,7 @@ function Article({type}) {
             </div>
 
             {
-                type === 'audio' ?
+                type === 'listen' && isPlaying ?
 
                     <div className="audioTrack">
                         <div className="switchAuthFont">0:54</div>

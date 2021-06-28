@@ -6,7 +6,6 @@ import Comments from './4-Comments'
 
 function ArticleHeader() {
 
-    const background = '/static/media/astronaut.9f78152b.svg'
 
     return (
         <div className='articleHeaderDiv' >

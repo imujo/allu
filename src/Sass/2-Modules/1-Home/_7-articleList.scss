@@ -9,6 +9,13 @@
   grid-auto-rows: 285px;
   column-gap: 100px;
   row-gap: 130px;
+  position: relative;
+
+  & h2 {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%);
+  }
 }
 
 @media (max-width: 1400px) {

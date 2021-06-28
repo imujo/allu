@@ -6,8 +6,10 @@
   top: -10px;
   z-index: 2;
   & * {
-    border-bottom: 2px solid $blackPurple;
     cursor: pointer;
+  }
+  & .selectedTab {
+    border-bottom: 2px solid $blackPurple;
   }
 }
 
