@@ -20,8 +20,7 @@ function Header() {
 
     } 
     
-    const {languageSelectedGlobal, languagesGlobal} = useContext(BackendContext);
-    const [languageSelected, setlanguageSelected] = languageSelectedGlobal
+    const {languagesGlobal} = useContext(BackendContext);
     const [languages,] = languagesGlobal
 
       
@@ -41,14 +40,14 @@ function Header() {
 
             {/* Select Language div */}
             <div className="selectLanguageDiv">
-                <h3>Select a language: ({languageSelected})</h3>
+                <h3>Select a language:</h3>
                 
                 <Splide options={options}>
                     {
                         languages.map((language, i)=>{
                             return <SplideSlide className='slide' key={i}>
                                 
-                                <Flag language={language} languageSelected={setlanguageSelected} />
+                                <Flag language={language} />
                             </SplideSlide>
                         })
                     }

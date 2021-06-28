@@ -1,11 +1,33 @@
+import { useContext, useEffect, useState } from "react"
+import {BackendContext} from '../../State/BackendState'
 
-function Flag({language, languageSelected}) {
+function Flag({language}) {
+    const [select, setselect] = useState('notselected')
+
+    const {languageSelectedGlobal} = useContext(BackendContext)
+    const [languageSelected, setlanguageSelected] = languageSelectedGlobal
+
+    useEffect(() => {
+        if (languageSelected === language){
+            setselect('selectedLanguage')
+        }else{
+            setselect('notselected')
+        }
+    }, [languageSelected])
+
+    const onFlagClick = () => {
+        if (language === languageSelected){
+            setlanguageSelected('')
+        }else{
+            setlanguageSelected(language)
+        }
+    }
 
     return (
-        <div className='flagDiv'>
+        <div className={`flagDiv ${select}`}>
             <img 
                 className="flag" 
-                onClick={()=> languageSelected(language)}
+                onClick={onFlagClick}
                 src={`http://localhost:9000/flags/${language}.png`}  
                 alt='flag' />
             <h4 className='countryName'>{language}</h4>

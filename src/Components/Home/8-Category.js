@@ -29,7 +29,7 @@ function Category({category}) {
 
     return (
         <div className={`categoryDiv ${select}`} onClick={onCategoryClick} >
-            <div className="categoryIcon"></div>
+            <img className="categoryIcon" alt='icon' src={`http://localhost:9000/categoryIcons/${category}.svg`} />
             <div className="divider"></div>
             <div className="categoryFont">{category}</div>
         </div>

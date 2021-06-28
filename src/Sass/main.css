@@ -505,6 +505,15 @@ p {
   border-radius: 7px;
 }
 
+.headerDiv .selectLanguageDiv .selectedLanguage .flag {
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.headerDiv .selectLanguageDiv .selectedLanguage .countryName {
+  visibility: visible;
+}
+
 .headerDiv .selectLanguageDiv .countryName {
   margin-top: 10px;
   display: -webkit-box;
@@ -972,13 +981,6 @@ p {
 .categoryDiv .categoryIcon {
   height: 30px;
   width: 30px;
-  -webkit-mask: url(/src/assets/camera.svg);
-          mask: url(/src/assets/camera.svg);
-  -webkit-mask-size: contain;
-          mask-size: contain;
-  background-color: #280b38;
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
 }
 
 .categoryDiv .divider {

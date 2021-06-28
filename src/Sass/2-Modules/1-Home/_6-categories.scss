@@ -21,10 +21,10 @@
 
   & .categoryIcon {
     @include size(30px);
-    mask: url(/src/assets/camera.svg);
-    mask-size: contain;
-    background-color: $blackPurple;
-    mask-repeat: no-repeat;
+    // mask: url(/src/assets/camera.svg);
+    // mask-size: contain;
+    // background-color: $blackPurple;
+    // mask-repeat: no-repeat;
   }
 
   & .divider {
