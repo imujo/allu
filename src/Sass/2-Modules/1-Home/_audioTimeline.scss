@@ -1,0 +1,21 @@
+.audioTimelineDiv {
+  @include flex(row, space-around);
+  height: 100%;
+  width: 100%;
+  & .track {
+    @include size(100%, 80%);
+    @include flex();
+    position: relative;
+  }
+  & .emptyTrack {
+    @include size(2px, 100%);
+    background-color: $greyPurple;
+    cursor: pointer;
+  }
+  & .fullTrack {
+    background-color: $lightPurple;
+    height: 2px;
+    position: absolute;
+    left: 0;
+  }
+}

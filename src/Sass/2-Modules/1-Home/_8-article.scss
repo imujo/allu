@@ -1,6 +1,16 @@
 .articleDiv {
   @include size(285px, 340px);
-  @include click($s2: 2px, $s3: 5px, $shadowActive: 1);
+  // @include click($s2: 2px, $s3: 5px, $shadowActive: 1);
+  cursor: pointer;
+
+  &[hover="1"] {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    &:active {
+      transform: scale(0.99);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+  }
 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -31,6 +41,16 @@
     left: 10px;
   }
 
+  & .audioTrack {
+    @include size(35px, 100%);
+    background-color: white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    box-sizing: border-box;
+    @include flex(row, space-around);
+    cursor: auto;
+  }
+
   & .articleText {
     height: 85px;
     box-sizing: border-box;
@@ -51,31 +71,6 @@
       border-radius: 90px;
       @include flex();
       @include click();
-    }
-  }
-
-  & .audioTrack {
-    @include size(35px, 100%);
-    background-color: white;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    padding: 0 10px;
-    box-sizing: border-box;
-    @include flex(row, space-around);
-    & .track {
-      @include size(100%, 80%);
-      @include flex();
-      position: relative;
-    }
-    & .emptyTrack {
-      @include size(2px, 100%);
-      background-color: $backgroundPurple;
-      cursor: pointer;
-    }
-    & .fullTrack {
-      background-color: $lightPurple;
-      height: 2px;
-      position: absolute;
-      left: 0;
     }
   }
 }

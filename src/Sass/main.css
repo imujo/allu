@@ -247,6 +247,10 @@ p {
   top: 0;
 }
 
+.navShadow[menuisopen="true"] {
+  z-index: 3;
+}
+
 .navDiv {
   height: 80px;
   max-width: 1350px;
@@ -407,17 +411,134 @@ p {
     height: 60px;
     padding: 0 20px;
   }
+  .navDiv .menuIcon {
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+  }
   .navDiv .links {
-    background-image: url(/src/assets/menu.svg);
-    color: #7033bf;
-    height: 25px;
-    width: 25px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    right: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ede9fe), to(#b9aee6));
+    background-image: linear-gradient(to bottom, #ede9fe, #b9aee6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 40px;
   }
-  .navDiv .links * {
-    display: none;
+  .navDiv .links[openmenuanimation="true"] {
+    -webkit-animation: toggleMenu 0.2s ease-in-out;
+            animation: toggleMenu 0.2s ease-in-out;
   }
+  .navDiv .links[closemenuanimation="true"] {
+    animation: toggleMenu 0.2s ease-in-out reverse;
+  }
+  .navDiv .links[menuisopen="true"] {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .navDiv .links ul,
   .navDiv .links .authButtons {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    gap: 40px;
+  }
+  .navDiv .links ul li,
+  .navDiv .links .authButtons button {
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+  }
+  .navDiv .links ul li:hover,
+  .navDiv .links .authButtons button:hover {
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .navDiv .links {
+    width: 50vw;
+    gap: 20px;
+    position: absolute;
+  }
+  .navDiv .links ul,
+  .navDiv .links .authButtons {
+    gap: 20px;
+  }
+  .navDiv .links ul li,
+  .navDiv .links .authButtons button {
+    font-size: 15px;
+  }
+}
+
+@-webkit-keyframes toggleMenu {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes toggleMenu {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -816,6 +937,45 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 100px;
+}
+
+.loadMoreBtn {
+  background-color: #7033bf;
+  color: white;
+  height: 30px;
+  width: 90px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.loadMoreBtn:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.loadMoreBtn:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .tabsDiv {
@@ -1049,7 +1209,8 @@ p {
 .articleListDiv {
   min-height: 500px;
   max-width: 1300px;
-  margin: 150px 0;
+  margin-top: 100px;
+  margin-bottom: 50px;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -1114,14 +1275,14 @@ p {
   background-color: #ede9fe;
 }
 
-.articleDiv:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
+.articleDiv[hover="1"] {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.articleDiv:active {
+.articleDiv[hover="1"]:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
@@ -1153,6 +1314,30 @@ p {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.articleDiv .audioTrack {
+  height: 35px;
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: auto;
 }
 
 .articleDiv .articleText {
@@ -1229,62 +1414,6 @@ p {
           box-shadow: none;
 }
 
-.articleDiv .audioTrack {
-  height: 35px;
-  width: 100%;
-  background-color: white;
-  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  padding: 0 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.articleDiv .audioTrack .track {
-  height: 100%;
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-.articleDiv .audioTrack .emptyTrack {
-  height: 2px;
-  width: 100%;
-  background-color: #ede9fe;
-  cursor: pointer;
-}
-
-.articleDiv .audioTrack .fullTrack {
-  background-color: #b9aee6;
-  height: 2px;
-  position: absolute;
-  left: 0;
-}
-
 @media (max-width: 1400px) {
   .articleDiv {
     height: 235px;
@@ -1346,6 +1475,56 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.audioTimelineDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.audioTimelineDiv .track {
+  height: 100%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.audioTimelineDiv .emptyTrack {
+  height: 2px;
+  width: 100%;
+  background-color: #837e9f;
+  cursor: pointer;
+}
+
+.audioTimelineDiv .fullTrack {
+  background-color: #b9aee6;
+  height: 2px;
+  position: absolute;
+  left: 0;
 }
 
 .articleHeaderDiv {
@@ -2139,32 +2318,9 @@ p {
           box-shadow: none;
 }
 
-.audioTrackFooterDiv .track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
-}
-
-.audioTrackFooterDiv .trackEmpty {
-  height: 5px;
-  width: 400px;
-  background-color: #b9aee6;
-}
-
-.audioTrackFooterDiv .trackEmpty .trackFull {
-  height: 5px;
-  background-color: #837e9f;
+.audioTrackFooterDiv .articlePageTimeline {
+  width: 70%;
+  max-width: 600px;
 }
 
 @media (max-width: 500px) {

@@ -9,7 +9,7 @@ import { fetchArticle } from '../../State/StateFunctions'
 
 function ArticlePage() {
 
-    const {id} = useParams();
+    const {id, trackProgress} = useParams();
 
     const [articleData, setarticleData] = useState({comments: [{user: 'a', message: 'a'}]})
 
@@ -18,6 +18,7 @@ function ArticlePage() {
     }, [id, setarticleData])
 
     const {title, user, clicks, comments,  likes, articleText, type, category} = articleData
+
 
 
     return (
@@ -36,7 +37,7 @@ function ArticlePage() {
             {
                 type === 'listen' ?
                 
-                <AudioTrackFooter />
+                <AudioTrackFooter trackProgressLast={trackProgress} id={id} />
 
                 :
 

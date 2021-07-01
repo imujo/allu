@@ -4,4 +4,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   @include flex($jc: flex-start);
+  margin-bottom: 100px;
+}
+
+.loadMoreBtn {
+  @include btn(30px, 90px);
 }
