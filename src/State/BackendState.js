@@ -6,7 +6,7 @@ const BackendContext = createContext();
 const BackendContextProvider = (props) => {
 
     // LANGUAGES
-    const [languageSelected, setlanguageSelected] = useState('')
+    const [languageSelected, setlanguageSelected] = useState('none')
     const [languages, setlanguages] = useState([])
 
 
@@ -40,9 +40,12 @@ const BackendContextProvider = (props) => {
 
     let filteredArticles = articles.filter(article =>{
 
-        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && article.type === tabSelected && (article.category === selectedCategory || selectedCategory === '') && (article.language === languageSelected || languageSelected === '')
+        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && article.type === tabSelected && (article.category === selectedCategory || selectedCategory === '') && (article.language === languageSelected || languageSelected === 'none')
         return filter
     })
+
+    // AUTH
+    const [authOpen, setauthOpen] = useState('')
 
     
 
@@ -61,6 +64,8 @@ const BackendContextProvider = (props) => {
 
             searchGlobal: [search, setsearch],
             filteredArticles: filteredArticles,
+
+            authOpenGlobal: [authOpen, setauthOpen],
 
 
 

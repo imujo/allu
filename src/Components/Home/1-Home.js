@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Nav from './2-Nav'
 import Header from './3-Header'
 import Body from './4-Body'
 import Footer from './11-Footer'
-// import Auth from '../Random/Auth'
+import Auth from '../Random/Auth'
+import {BackendContext} from '../../State/BackendState'
 
 function Home() {
+
+    const {authOpenGlobal} = useContext(BackendContext)
+    const [authOpen, setAuthOpen] = authOpenGlobal
+
     return (
         <div>
 
@@ -26,7 +31,12 @@ function Home() {
 
 
             {/* Auth */}
-            {/* <Auth type='login' /> */}
+            {
+                authOpen === '' ?
+                    undefined
+                    :
+                    <Auth type={authOpen} setAuthOpen={setAuthOpen} />
+            }
 
 
 

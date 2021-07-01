@@ -20,6 +20,10 @@
       gap: 40px;
       margin-left: 20px;
     }
+
+    & .like {
+      cursor: pointer;
+    }
   }
 
   & .articleStatsSection {
@@ -38,11 +42,11 @@
     grid-area: articleImage;
     @include flex();
     & .articlePageImage {
-      @include size(500px);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 80%;
-      background-image: url(/src/assets/astronaut.svg);
+      @include size(560px);
+      object-position: center;
+      object-fit: contain;
+      box-sizing: border-box;
+      padding: 10%;
 
       border: 30px solid $lightPurple;
     }
@@ -54,7 +58,7 @@
     height: 700px;
 
     & .articlePageImageSection .articlePageImage {
-      @include size(400px);
+      @include size(460px);
     }
   }
 }

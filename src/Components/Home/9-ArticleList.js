@@ -12,7 +12,7 @@ function ArticleList() {
 
             {
                 filteredArticles.length > 0 ?
-                    [1,2,3,4].map((value, i)=>{
+                    [1].map((value, i)=>{
                         return(
                             filteredArticles.map((article, i)=>{
                                 return(
@@ -21,6 +21,7 @@ function ArticleList() {
                                         oneLiner={article.oneLiner}
                                         category={article.category}
                                         type={article.type}
+                                        id = {article.id}
                                         language={article.language}
                                         articleText={article.text}
                                         views={article.views}

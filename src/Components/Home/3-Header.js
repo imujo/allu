@@ -20,8 +20,9 @@ function Header() {
 
     } 
     
-    const {languagesGlobal} = useContext(BackendContext);
+    const {languagesGlobal, languageSelectedGlobal} = useContext(BackendContext);
     const [languages,] = languagesGlobal
+    const [languageSelected, ] = languageSelectedGlobal;
 
       
 
@@ -60,7 +61,7 @@ function Header() {
             {/* Image Div */}
             <div className="imageDiv">
                 <div className="purpleBlock"></div>
-                <div className="image"></div>
+                <img className="image" alt='countrySelected' src={`http://localhost:9000/countryImages/${languageSelected}.jpg`} />
             </div>
 
         </div>

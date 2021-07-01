@@ -13,11 +13,11 @@ function Flag({language}) {
         }else{
             setselect('notselected')
         }
-    }, [languageSelected])
+    }, [languageSelected, language])
 
     const onFlagClick = () => {
         if (language === languageSelected){
-            setlanguageSelected('')
+            setlanguageSelected('none')
         }else{
             setlanguageSelected(language)
         }

@@ -1,7 +1,11 @@
 import Logo from '../Random/Logo'
+import {BackendContext} from '../../State/BackendState'
+import { useContext } from 'react'
 
 function Nav() {
 
+    const {authOpenGlobal} = useContext(BackendContext)
+    const [, setAuthOpen] = authOpenGlobal
 
     return (
         <div className='navShadow' >
@@ -17,8 +21,8 @@ function Nav() {
                     </ul>
 
                     <div className="authButtons">
-                        <button>Sign Up</button>
-                        <button>Log In</button>
+                        <button onClick={()=> setAuthOpen('signup')} >Sign Up</button>
+                        <button onClick={()=> setAuthOpen('login')} >Log In</button>
                     </div>
                 </div>
             </div>

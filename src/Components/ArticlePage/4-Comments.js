@@ -2,18 +2,18 @@ import React from 'react'
 import { AiOutlineSend } from 'react-icons/ai';
 
 
-function Comments() {
+function Comments({comments}) {
     return (
         <div className='commentsDiv' >
             <div className='commentTitleFont'>Comments</div>
 
                 <div className="commentsList">
                     {
-                        [1,1,1,1,1,1,1].map((value, i)=>{
+                        comments.map((comment, i)=>{
                             return (
                                 <div key={i} className="comment">
-                                    <div className="userIcon commentTitleFont">A</div>
-                                    <div className="commentText commentFont">This is great</div>
+                                    <div className="userIcon commentTitleFont">{comment.user[0]}</div>
+                                    <div className="commentText commentFont">{comment.message}</div>
                                 </div>
                             )
                         })

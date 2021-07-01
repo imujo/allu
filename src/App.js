@@ -1,6 +1,7 @@
 import {Switch, Route} from 'react-router-dom'
 import Home from './Components/Home/1-Home'
 import ArticlePage from './Components/ArticlePage/1-ArticlePage'
+import ScrollToTop from './Other/ScrollToTop'
 
 
 function App() {
@@ -8,8 +9,9 @@ function App() {
     <div className="app">
       
         <Switch>
-          <Route path='/article'>
-            <ArticlePage type='audio' />
+          <Route path='/article/:id'>
+            <ScrollToTop />
+            <ArticlePage/>
           </Route>
           <Route path='/'>
             <Home />

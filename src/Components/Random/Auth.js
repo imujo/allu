@@ -2,20 +2,23 @@ import React from 'react'
 import { BsX } from 'react-icons/bs';
 
 
-function Auth({type}) {
+function Auth({type, setAuthOpen}) {
 
     let title;
     let switchText;
     let switchButton;
+    let switchTo;
 
     if (type === 'signup'){
         title = 'Sign Up'
         switchText = 'Already have an account?'
         switchButton = 'Log In'
+        switchTo = 'login'
     }else{
         title = 'Log In'
         switchText = "Don't have an account?"
         switchButton = 'Sign Up'
+        switchTo = 'signup'
     }
 
     return (
@@ -56,9 +59,10 @@ function Auth({type}) {
 
             <div className="switch">
                 <p className='switchAuthFont'>{switchText}</p>
-                <p className='switchAuthFont bold'> {switchButton} </p>
+                <p onClick={()=> setAuthOpen(switchTo)} className='switchAuthFont bold'> {switchButton} </p>
             </div>
-            <BsX className='exit' />
+
+            <BsX onClick={()=> setAuthOpen('')} className='exit' />
         </div>
     )
 }
