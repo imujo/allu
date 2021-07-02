@@ -18,13 +18,15 @@ const BackendContextProvider = (props) => {
     // ARTICLES
     const [articles, setarticles] = useState([])
 
-    useEffect(() => {
-        fetchArticles(setarticles)
-    }, [])
+
 
 
     // TABS 
     const [tabSelected, settabSelected] = useState('read')
+
+    useEffect(() => {
+        fetchArticles(setarticles, tabSelected)
+    }, [tabSelected])
 
     // CATEGORIES
 
@@ -40,7 +42,7 @@ const BackendContextProvider = (props) => {
 
     let filteredArticles = articles.filter(article =>{
 
-        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && article.type === tabSelected && (article.category === selectedCategory || selectedCategory === '') && (article.language === languageSelected || languageSelected === 'none')
+        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && (article.category === selectedCategory || selectedCategory === '') && (article.language === languageSelected || languageSelected === 'none')
         return filter
     })
 

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import Article from './10-Article'
+import ReadArticle from './10-ReadArticle'
+import ListenArticle from './10-ListenArticle'
 import {BackendContext} from '../../State/BackendState'
 
 function ArticleList({loadedArticles}) {
@@ -13,19 +14,37 @@ function ArticleList({loadedArticles}) {
                 filteredArticles.length > 0 ?
                     filteredArticles.slice(0,loadedArticles).map((article, i)=>{
                         return(
-                            <Article
-                                title={article.title}
-                                oneLiner={article.oneLiner}
-                                category={article.category}
-                                type={article.type}
-                                id = {article.id}
-                                language={article.language}
-                                articleText={article.text}
-                                views={article.views}
-                                likes={article.views}
-                                comments={article.comments}
-                                key={i}
-                            />
+                            
+                                article.type === 'read' ?
+                                    <ReadArticle
+                                        title={article.title}
+                                        oneLiner={article.oneLiner}
+                                        category={article.category}
+                                        type={article.type}
+                                        id = {article.id}
+                                        language={article.language}
+                                        articleText={article.text}
+                                        views={article.views}
+                                        likes={article.views}
+                                        comments={article.comments}
+                                        key={i}
+                                    />
+                                :
+                                    <ListenArticle
+                                        title={article.title}
+                                        oneLiner={article.oneLiner}
+                                        category={article.category}
+                                        type={article.type}
+                                        id = {article.id}
+                                        language={article.language}
+                                        articleText={article.text}
+                                        views={article.views}
+                                        likes={article.views}
+                                        comments={article.comments}
+                                        key={i}
+                                    />
+                            
+                            
                         )
                         
                     })

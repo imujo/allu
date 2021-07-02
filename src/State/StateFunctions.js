@@ -4,11 +4,12 @@ export const fetchLanguages = (setlanguages) => {
             .then(data => setlanguages(data))
 }
 
-export const fetchArticles = (setarticles) => {
-    fetch('http://localhost:9000/api/articles')
+export const fetchArticles = (setarticles, type) => {
+    fetch(`http://localhost:9000/api/${type}Articles`)
         .then(res => res.json())
         .then(data => setarticles(data))
 }
+
 
 export const fetchCategories = (setcategories) => {
     fetch('http://localhost:9000/api/categories')
