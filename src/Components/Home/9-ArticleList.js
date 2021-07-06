@@ -15,32 +15,28 @@ function ArticleList({loadedArticles}) {
                     filteredArticles.slice(0,loadedArticles).map((article, i)=>{
                         return(
                             
-                                article.type === 'read' ?
+                                article.articletype === 'read' ?
                                     <ReadArticle
                                         title={article.title}
-                                        oneLiner={article.oneLiner}
+                                        oneLiner={article.oneliner}
                                         category={article.category}
-                                        type={article.type}
+                                        type={article.articletype}
                                         id = {article.id}
                                         language={article.language}
                                         articleText={article.text}
-                                        views={article.views}
-                                        likes={article.views}
-                                        comments={article.comments}
+                                        clicks={article.clicks}
                                         key={i}
                                     />
                                 :
                                     <ListenArticle
                                         title={article.title}
-                                        oneLiner={article.oneLiner}
+                                        oneLiner={article.oneliner}
                                         category={article.category}
-                                        type={article.type}
+                                        type={article.articleType}
                                         id = {article.id}
                                         language={article.language}
                                         articleText={article.text}
-                                        views={article.views}
-                                        likes={article.views}
-                                        comments={article.comments}
+                                        clicks={article.clicks}
                                         key={i}
                                     />
                             

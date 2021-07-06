@@ -28,7 +28,7 @@ function Flag({language}) {
             <img 
                 className="flag" 
                 onClick={onFlagClick}
-                src={`http://localhost:9000/flags/${language}.png`}  
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/flags/${language}.png`}  
                 alt='flag' />
             <h4 className='countryName'>{language}</h4>
         </div>

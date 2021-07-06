@@ -12,8 +12,8 @@ function Comments({comments}) {
                         comments.map((comment, i)=>{
                             return (
                                 <div key={i} className="comment">
-                                    <div className="userIcon commentTitleFont">{comment.user[0]}</div>
-                                    <div className="commentText commentFont">{comment.message}</div>
+                                    <div className="userIcon commentTitleFont">{comment.username[0]}</div>
+                                    <div className="commentText commentFont">{comment.text}</div>
                                 </div>
                             )
                         })

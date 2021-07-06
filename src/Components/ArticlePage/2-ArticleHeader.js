@@ -32,7 +32,11 @@ function ArticleHeader({title, user, clicks, comments, likes, category}) {
                 <Comments comments={comments} />
             </div>
             <div className="articlePageImageSection">
-                <img alt='articleImage' src={`http://localhost:9000/categoryImages/${category}.svg`} className="articlePageImage"  ></img>
+                <img 
+                    alt='articleImage' 
+                    src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
+                    className="articlePageImage"  
+                />
             </div>
             
         </div>
@@ -40,5 +44,3 @@ function ArticleHeader({title, user, clicks, comments, likes, category}) {
 }
 
 export default ArticleHeader
-
-// style={{backgroundImage: `url(${background})`}}

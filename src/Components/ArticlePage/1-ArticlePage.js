@@ -1,24 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Nav from '../Home/2-Nav'
 import ArticleHeader from './2-ArticleHeader'
 import ArticleText from './5-ArticleText'
 import AudioTrackFooter from '../Random/AudioTrackFooter'
 import {useParams} from 'react-router-dom'
-import { fetchArticle } from '../../State/StateFunctions'
+import { fetchArticle, fetchComments, fetchLikes} from '../../State/StateFunctions'
+import {BackendContext} from '../../State/BackendState'
+import Auth from '../Random/Auth'
+
+
 
 
 function ArticlePage() {
 
-    const {id, trackProgress} = useParams();
+    const {type, id, trackProgress} = useParams();
 
     const [articleData, setarticleData] = useState({comments: [{user: 'a', message: 'a'}]})
+    const [comments, setComments] = useState([])
+    const [likes, setLikes] = useState(0)
 
+    
     useEffect(() => {
-        fetchArticle(setarticleData, id)
-    }, [id, setarticleData])
+        fetchArticle(setarticleData, type, id)
+        fetchComments(setComments, type, id)
+        fetchLikes(setLikes, type, id)
 
-    const {title, user, clicks, comments,  likes, articleText, type, category} = articleData
+    }, [id, setarticleData, type])
 
+    
+    const {title, username, text, category, clicks} = articleData
+
+
+    const {authOpenGlobal} = useContext(BackendContext)
+    const [authOpen, setAuthOpen] = authOpenGlobal
 
 
     return (
@@ -28,10 +42,10 @@ function ArticlePage() {
             <Nav />
 
             {/* Article Header */}
-            <ArticleHeader title={title} user={user} clicks={clicks} comments={comments} likes={likes} category={category} />
+            <ArticleHeader title={title} user={username} clicks={clicks} comments={comments} likes={likes} category={category} />
 
             {/* Article Text */}
-            <ArticleText articleText={articleText} />
+            <ArticleText articleText={text} />
 
             {/* Audio Track Footer */}
             {
@@ -42,6 +56,13 @@ function ArticlePage() {
                 :
 
                 <></>
+            }
+
+{
+                authOpen === '' ?
+                    undefined
+                    :
+                    <Auth type={authOpen} setAuthOpen={setAuthOpen} />
             }
 
         </div>

@@ -119,6 +119,18 @@ p {
   line-height: 25px;
 }
 
+.errorFont {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: rgb(167, 29, 29);
+  text-align: center;
+}
+
+.successFont {
+  @extend .errorFont;
+  color: rgb(40, 167, 40);
+}
+
 @media (max-width: 1400px) {
   h1 {
     font-size: 80px;

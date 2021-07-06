@@ -3,8 +3,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -350px;
-  margin-left: -500px;
+  transform: translate(-50%, -50%);
   z-index: 3;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
 
@@ -17,8 +16,13 @@
     height: 20%;
     @include flex();
   }
+
+  & .message {
+    @include flex();
+    width: 70%;
+  }
   & .inputs {
-    height: 70%;
+    height: 50%;
     width: 40%;
     @include flex($jc: space-around);
 
@@ -35,10 +39,6 @@
       }
     }
 
-    & .name {
-      @include flex($direction: row, $ai: space-around);
-      gap: 40px;
-    }
     & input[type="submit"] {
       @include btn(40px, 100px, 18px);
     }
@@ -65,8 +65,6 @@
 @media (max-width: 1100px) {
   .authDiv {
     @include size(600px, 400px);
-    margin-top: -300px;
-    margin-left: -200px;
     & .inputs {
       width: 70%;
     }
@@ -77,15 +75,9 @@
   .authDiv {
     @include size(80vh, 250px);
     max-height: 650px;
-    margin-top: -40vh;
-    margin-left: -125px;
 
     &[type="login"] {
       max-height: 400px;
-    }
-
-    & .inputs .name {
-      gap: 20px;
     }
 
     & .inputs input {

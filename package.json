@@ -2,7 +2,7 @@
   "name": "allu",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://imujo.github.io/allu/",
+  "homepage": "http://localhost:5000",
   "dependencies": {
     "@splidejs/react-splide": "^0.4.4",
     "@testing-library/jest-dom": "^5.14.1",

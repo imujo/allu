@@ -10,7 +10,7 @@ function AudioTrackFooter({trackProgressLast, id}) {
     const [trackPercentage, settrackPercentage] = useState(0)
     const [trackProgress, settrackProgress] = useState(0)
 
-    const audioRef = useRef(new Audio(`http://localhost:9000/audio/${id}.mp3`))
+    const audioRef = useRef(new Audio(`${process.env.REACT_APP_SERVER_DOMAIN}/audio/${id}.mp3`))
     const intervalRef = useRef()
     const {duration} = audioRef.current;
     

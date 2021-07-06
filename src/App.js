@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       
         <Switch>
-          <Route path='/article/:id/:trackProgress'>
+          <Route path='/article/:type/:id/:trackProgress'>
             <ScrollToTop />
             <ArticlePage/>
           </Route>

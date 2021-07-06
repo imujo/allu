@@ -1,13 +1,20 @@
-import React, {useState } from 'react'
+import React, {useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { fetchPostClick, fetchUser} from '../../State/StateFunctions'
+import { BackendContext } from '../../State/BackendState'
 
 
-function ReadArticle({title, oneLiner, category, type, id, language, articleText, views, likes, comments}) {
+function ReadArticle({title, oneLiner, category, type, id, language, articleText, clicks, likes, comments}) {
 
     const history = useHistory()
 
+    const {userGlobal} = useContext(BackendContext)
+    const [user, setUser] = userGlobal
+
     const redirectToArticle = () => {
-        history.push(`/article/${id}/0`)
+        fetchUser(setUser)
+        fetchPostClick(type, id, {})
+        history.push(`/article/${type}/${id}/0`)
     }
     const [hover, setHover] = useState(0)
 
@@ -21,7 +28,7 @@ function ReadArticle({title, oneLiner, category, type, id, language, articleText
         >
             <img 
                 alt='articleImage' 
-                src={`http://localhost:9000/categoryImages/${category}.svg`} 
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
                 className='articleImage' 
             />
 

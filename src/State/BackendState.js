@@ -1,5 +1,5 @@
 import React, {useState, createContext, useEffect} from 'react'
-import {fetchLanguages, fetchArticles, fetchCategories} from './StateFunctions'
+import {fetchLanguages, fetchArticles, fetchCategories, fetchUser} from './StateFunctions'
 
 const BackendContext = createContext();
 
@@ -49,6 +49,13 @@ const BackendContextProvider = (props) => {
     // AUTH
     const [authOpen, setauthOpen] = useState('')
 
+    const [user, setUser] = useState({})
+    const [isAuth, setIsAuth] = useState(false)
+
+    // useEffect(() => {
+    //     fetchUser(setUser)
+    //     setTimeout(()=>console.log(user), 3000)
+    // }, [user])
     
 
     return(
@@ -68,6 +75,9 @@ const BackendContextProvider = (props) => {
             filteredArticles: filteredArticles,
 
             authOpenGlobal: [authOpen, setauthOpen],
+
+            userGlobal: [user, setUser],
+            isAuthGlobal: [isAuth, setIsAuth],
 
 
 

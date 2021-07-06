@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom'
 import {startTimer, onPlay} from '../../State/AudioFunctions'
+import { fetchPostClick } from '../../State/StateFunctions'
 import AudioTimeline from './AudioTimeline'
 
 
@@ -10,7 +11,8 @@ function ListenArticle({title, oneLiner, category, type, id, language, articleTe
     const history = useHistory()
 
     const redirectToArticle = () => {
-        history.push(`/article/${id}/${trackProgress}`)
+        fetchPostClick(type, id, {})
+        history.push(`/article/${type}/${id}/${trackProgress}`)
     }
     const [hover, setHover] = useState(0)
 
@@ -22,7 +24,7 @@ function ListenArticle({title, oneLiner, category, type, id, language, articleTe
    
 
 
-    const audioRef = useRef(new Audio( `http://localhost:9000/audio/${id}.mp3`))
+    const audioRef = useRef(new Audio( `${process.env.REACT_APP_SERVER_DOMAIN}/audio/${id}.mp3`))
     const intervalRef = useRef()
     const {duration} = audioRef.current;
        
@@ -45,7 +47,7 @@ function ListenArticle({title, oneLiner, category, type, id, language, articleTe
         >
             <img 
                 alt='articleImage' 
-                src={`http://localhost:9000/categoryImages/${category}.svg`} 
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
                 className='articleImage' 
                 onClick={()=>redirectToArticle()}
                 onMouseEnter={()=> setHover(1)}
