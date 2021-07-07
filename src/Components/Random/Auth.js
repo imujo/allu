@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BsX } from 'react-icons/bs';
 import { fetchAuth } from '../../State/StateFunctions'
+import { BackendContext } from '../../State/BackendState'
 
 
 function Auth({type, setAuthOpen}) {
@@ -32,6 +33,10 @@ function Auth({type, setAuthOpen}) {
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
 
+    const {userGlobal, isAuthGlobal} = useContext(BackendContext)
+    const [, setUser] = userGlobal
+    const [, setIsAuth] = isAuthGlobal
+
     const onSubmit = (e) => {
         e.preventDefault()        
 
@@ -42,8 +47,7 @@ function Auth({type, setAuthOpen}) {
         }
        
 
-        fetchAuth(action, body, setErrorMessage)
-        
+        fetchAuth(action, body, setErrorMessage, setIsAuth, setUser)
         
     }
 

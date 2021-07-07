@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { AiOutlineSend } from 'react-icons/ai';
+import { fetchPostComment, fetchComments } from '../../State/StateFunctions'
 
 
-function Comments({comments}) {
+function Comments({type, comments, setcomments, articleid, username}) {
+
+    const [commentText, setCommentText] = useState('')
+
+
+    const addComment = (e) => {
+        e.preventDefault()
+
+        fetchPostComment(type, articleid, username, commentText)
+
+        fetchComments(setcomments, type, articleid)
+        
+        setCommentText('')
+    }
+    
+
     return (
         <div className='commentsDiv' >
             <div className='commentTitleFont'>Comments</div>
@@ -22,10 +38,12 @@ function Comments({comments}) {
 
                 </div>
 
-            <div className='center'>
-                <input type='text' className="leaveComment" placeholder='Comment'></input>
-                <AiOutlineSend className='commentIcon' />
-            </div>
+            <form className='center' onSubmit={e=> addComment(e)} >
+                <input type='text' value={commentText} onChange={e => setCommentText(e.target.value)} className="leaveComment" placeholder='Comment'></input>
+                <button type='submit' >
+                    <AiOutlineSend className='commentIcon' />
+                </button>
+            </form>
         </div>
    
     )

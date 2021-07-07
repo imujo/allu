@@ -1,18 +1,15 @@
-import React, {useContext, useState } from 'react'
+import React, {useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { fetchPostClick, fetchUser} from '../../State/StateFunctions'
-import { BackendContext } from '../../State/BackendState'
+import { fetchPostClick} from '../../State/StateFunctions'
 
 
 function ReadArticle({title, oneLiner, category, type, id, language, articleText, clicks, likes, comments}) {
 
     const history = useHistory()
 
-    const {userGlobal} = useContext(BackendContext)
-    const [user, setUser] = userGlobal
+ 
 
     const redirectToArticle = () => {
-        fetchUser(setUser)
         fetchPostClick(type, id, {})
         history.push(`/article/${type}/${id}/0`)
     }

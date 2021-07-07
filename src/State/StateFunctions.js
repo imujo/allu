@@ -52,7 +52,16 @@ export const fetchAuth = (action, body, setErrorMessage, setIsAuth, setUser) => 
 
     fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/auth/${action}`, requestOptions)
             .then(res =>res.json())
-            .then(message => setErrorMessage(message))
+            .then(message => {
+                setErrorMessage(message);
+                setUser(message.user);
+                setIsAuth(message.isauth)
+            })
+            .then(r => {
+                if (action === 'register'){
+                    fetchAuth('login', body, setErrorMessage, setIsAuth, setUser)
+                }
+            })
             .catch(e => setErrorMessage({status: 400, msg: "Couldn't connect to the server"}))
 }
 
@@ -68,11 +77,50 @@ export const fetchPostClick = (type, id, body) => {
             .catch(e => console.log('Click error'))
 }
 
-export const fetchUser = (setUser) => {
+export const fetchUser = (setUser, setIsAuth) => {
     fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/auth/user`)
-        // .then(res => res.json())
-        .then(data => console.log(JSON.stringify(data)))
-        // .then(user => setUser(user[0]))
+        .then(res => res.json())
+        .then(data => {
+            setUser(data.user);
+            setIsAuth(data.isauth)
+        })
+        .catch(e => console.log("Coludn't connect to the server"))
+}
+
+export const fetchLogout = (setIsAuth, setUser) => {
+    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/auth/logout`)
+        .then(r => setIsAuth(false))
+        .then(r => setUser({}))
+        .catch(e => console.log("Coludn't connect to the server"))
+}
+
+export const fetchPostLike = (type, articleId, userId, setLiked, liked) => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+    };
+
+    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/addLike/${type}/${articleId}/${userId}`, requestOptions)
+        .then(r => setLiked(!liked))
+        .catch(e => console.log('Like error')) 
+}
+
+export const fetchUserArticleLike = (type, articleId, userId, setLiked) => {
+
+    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/like/${type}/${articleId}/${userId}`)
+        .then(res => res.json())
+        .then(data => setLiked(data.liked))
+        .catch(e => console.log("Couldn't connect to the server")) 
+}
+
+export const fetchPostComment = (type, articleId, username, text) => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+    };
+
+    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/addComment/${type}/${articleId}/${username}/${text}`, requestOptions)
+        .catch(e => console.log("Couldn't connect to the server")) 
 }
 
 

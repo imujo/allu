@@ -52,10 +52,9 @@ const BackendContextProvider = (props) => {
     const [user, setUser] = useState({})
     const [isAuth, setIsAuth] = useState(false)
 
-    // useEffect(() => {
-    //     fetchUser(setUser)
-    //     setTimeout(()=>console.log(user), 3000)
-    // }, [user])
+    useEffect(() => {
+        fetchUser(setUser, setIsAuth)
+    }, [])
     
 
     return(

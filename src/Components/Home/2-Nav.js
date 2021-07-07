@@ -3,11 +3,14 @@ import {BackendContext} from '../../State/BackendState'
 import { useContext, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { BiMenuAltRight } from 'react-icons/bi';
+import { fetchLogout } from '../../State/StateFunctions'
 
 function Nav() {
 
-    const {authOpenGlobal} = useContext(BackendContext)
+    const {authOpenGlobal, isAuthGlobal, userGlobal} = useContext(BackendContext)
     const [, setAuthOpen] = authOpenGlobal
+    const [isAuth, setIsAuth] = isAuthGlobal
+    const [, setUser] = userGlobal
 
     const [openMenuAnimation, setOpenMenuAmimation] = useState(false)
     const [closeMenuAnimation, setCloseMenuAnimation] = useState(false)
@@ -59,8 +62,17 @@ function Nav() {
                         </ul>
 
                         <div className="authButtons">
-                            <button onClick={()=> setAuthOpen('signup')} >Sign Up</button>
-                            <button onClick={()=> setAuthOpen('login')} >Log In</button>
+                            {
+                                isAuth ? 
+                                    <button onClick={()=>fetchLogout(setIsAuth, setUser)} >Log Out</button>
+                                    :
+                                    <>
+                                        <button onClick={()=> setAuthOpen('signup')} >Sign Up</button>
+                                        <button onClick={()=> setAuthOpen('login')} >Log In</button>
+                                    </>
+                                        
+                            }
+                           
                         </div>
                     </div>
 

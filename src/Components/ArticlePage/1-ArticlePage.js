@@ -4,7 +4,7 @@ import ArticleHeader from './2-ArticleHeader'
 import ArticleText from './5-ArticleText'
 import AudioTrackFooter from '../Random/AudioTrackFooter'
 import {useParams} from 'react-router-dom'
-import { fetchArticle, fetchComments, fetchLikes} from '../../State/StateFunctions'
+import { fetchArticle, fetchComments, fetchLikes, fetchUserArticleLike} from '../../State/StateFunctions'
 import {BackendContext} from '../../State/BackendState'
 import Auth from '../Random/Auth'
 
@@ -15,24 +15,33 @@ function ArticlePage() {
 
     const {type, id, trackProgress} = useParams();
 
+    const {authOpenGlobal, userGlobal, isAuthGlobal} = useContext(BackendContext)
+    const [authOpen, setAuthOpen] = authOpenGlobal
+    const [user, setUser] = userGlobal
+    const [isAuth, setIsAuth] = isAuthGlobal
+
     const [articleData, setarticleData] = useState({comments: [{user: 'a', message: 'a'}]})
-    const [comments, setComments] = useState([])
     const [likes, setLikes] = useState(0)
+    const [liked, setLiked] = useState(false)
 
     
     useEffect(() => {
         fetchArticle(setarticleData, type, id)
-        fetchComments(setComments, type, id)
         fetchLikes(setLikes, type, id)
+        if (isAuth) {
+            fetchUserArticleLike(type, id, user.id, setLiked)
+        }else{
+            setLiked(false)
+        }
 
-    }, [id, setarticleData, type])
+
+    }, [id, setarticleData, type, isAuth, user, liked, setUser, setIsAuth])
 
     
     const {title, username, text, category, clicks} = articleData
 
 
-    const {authOpenGlobal} = useContext(BackendContext)
-    const [authOpen, setAuthOpen] = authOpenGlobal
+    
 
 
     return (
@@ -42,7 +51,17 @@ function ArticlePage() {
             <Nav />
 
             {/* Article Header */}
-            <ArticleHeader title={title} user={username} clicks={clicks} comments={comments} likes={likes} category={category} />
+            <ArticleHeader 
+                title={title} 
+                clicks={clicks} 
+                likes={likes} 
+                category={category} 
+                liked={liked}
+                setliked={setLiked}
+                articleid={id}
+                type={type}
+                username={username}
+            />
 
             {/* Article Text */}
             <ArticleText articleText={text} />
