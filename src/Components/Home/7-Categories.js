@@ -21,6 +21,7 @@ function Categories() {
       const {categoriesGlobal} = useContext(BackendContext)
       const [categories, ] = categoriesGlobal
 
+
     return (
         <div className='categoriesDiv' >
             <h2>Category</h2>
@@ -28,7 +29,7 @@ function Categories() {
                 {
                     categories.map((category, i)=>{
                         return <SplideSlide key={i} >
-                            <Category category={category} />
+                            <Category category={category} iconfile={category.iconfile} />
                         </SplideSlide>
                     })
                 }

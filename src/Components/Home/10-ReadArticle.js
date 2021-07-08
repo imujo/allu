@@ -25,7 +25,7 @@ function ReadArticle({title, oneLiner, category, type, id, language, articleText
         >
             <img 
                 alt='articleImage' 
-                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category.imagefile}`} 
                 className='articleImage' 
             />
 

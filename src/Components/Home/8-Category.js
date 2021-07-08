@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {BackendContext} from '../../State/BackendState'
 
-function Category({category}) {
+function Category({category, iconfile}) {
 
     const {selectedCategoryGlobal} = useContext(BackendContext)
     const [selectedCategory, setselectedCategory] = selectedCategoryGlobal
@@ -10,7 +10,7 @@ function Category({category}) {
     const [select, setselect] = useState('notselected')
 
     useEffect(() => {
-        if (selectedCategory === category){
+        if (selectedCategory.category === category.category){
             setselect('selected')
         }else{
             setselect('notselected')
@@ -18,20 +18,21 @@ function Category({category}) {
     }, [selectedCategory, category])
 
     const onCategoryClick = () => {
-        if (selectedCategory === category){
-            setselectedCategory('')
+        if (selectedCategory.category === category.category){
+            setselectedCategory({caegory: ''})
         }else{
             setselectedCategory(category)
         }
     }
+
     
     
 
     return (
         <div className={`categoryDiv ${select}`} onClick={onCategoryClick} >
-            <img className="categoryIcon" alt='icon' src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryIcons/${category}.svg`} />
+            <img className="categoryIcon" alt='icon' src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryIcons/${iconfile}`} />
             <div className="divider"></div>
-            <div className="categoryFont">{category}</div>
+            <div className="categoryFont">{category.category}</div>
         </div>
     )
 }

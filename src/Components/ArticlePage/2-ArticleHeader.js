@@ -6,7 +6,7 @@ import { fetchPostLike, fetchComments } from '../../State/StateFunctions'
 import { BackendContext } from '../../State/BackendState'
 
 
-function ArticleHeader({title, clicks, username, likes, category, liked, setliked, articleid, type}) {
+function ArticleHeader({title, clicks, created_by, likes, category, liked, setliked, articleid, type}) {
 
     const {userGlobal, isAuthGlobal} = useContext(BackendContext)
     const [user, ] = userGlobal
@@ -24,7 +24,7 @@ function ArticleHeader({title, clicks, username, likes, category, liked, setlike
             <div className="articlePageTitleSection">
                 <h1>{title}</h1>
                 <div className="user">
-                    <h2>by {username}</h2>
+                    <h2>by {created_by}</h2>
                     <div 
                         className="like" 
                         onClick={isAuth ? ()=>fetchPostLike(type, articleid, user.id, setliked, liked) : undefined}>

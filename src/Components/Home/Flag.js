@@ -8,7 +8,7 @@ function Flag({language}) {
     const [languageSelected, setlanguageSelected] = languageSelectedGlobal
 
     useEffect(() => {
-        if (languageSelected === language){
+        if (languageSelected.language === language.language){
             setselect('selectedLanguage')
         }else{
             setselect('notselected')
@@ -16,8 +16,8 @@ function Flag({language}) {
     }, [languageSelected, language])
 
     const onFlagClick = () => {
-        if (language === languageSelected){
-            setlanguageSelected('none')
+        if (language.language === languageSelected.language){
+            setlanguageSelected({imageurl: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1315&q=80', language: ''})
         }else{
             setlanguageSelected(language)
         }
@@ -28,9 +28,9 @@ function Flag({language}) {
             <img 
                 className="flag" 
                 onClick={onFlagClick}
-                src={`${process.env.REACT_APP_SERVER_DOMAIN}/flags/${language}.png`}  
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/flags/${language.flagfile}`}  
                 alt='flag' />
-            <h4 className='countryName'>{language}</h4>
+            <h4 className='countryName'>{language.language}</h4>
         </div>
     )
 }

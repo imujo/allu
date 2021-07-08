@@ -61,7 +61,7 @@ function Header() {
             {/* Image Div */}
             <div className="imageDiv">
                 <div className="purpleBlock"></div>
-                <img className="image" alt='countrySelected' src={`${process.env.REACT_APP_SERVER_DOMAIN}/countryImages/${languageSelected}.jpg`} />
+                <img className="image" alt='countrySelected' src={`${languageSelected.imageurl}`} />
             </div>
 
         </div>

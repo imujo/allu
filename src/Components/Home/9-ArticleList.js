@@ -37,6 +37,7 @@ function ArticleList({loadedArticles}) {
                                         language={article.language}
                                         articleText={article.text}
                                         clicks={article.clicks}
+                                        audiofile={article.audiofile}
                                         key={i}
                                     />
                             

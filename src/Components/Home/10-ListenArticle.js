@@ -6,7 +6,7 @@ import { fetchPostClick } from '../../State/StateFunctions'
 import AudioTimeline from './AudioTimeline'
 
 
-function ListenArticle({title, oneLiner, category, type, id, language, articleText, views, likes, comments}) {
+function ListenArticle({title, oneLiner, category, type, id, audiofile, language, articleText, views, likes, comments}) {
 
     const history = useHistory()
 
@@ -24,7 +24,7 @@ function ListenArticle({title, oneLiner, category, type, id, language, articleTe
    
 
 
-    const audioRef = useRef(new Audio( `${process.env.REACT_APP_SERVER_DOMAIN}/audio/${id}.mp3`))
+    const audioRef = useRef(new Audio( `${process.env.REACT_APP_SERVER_DOMAIN}/audio/${audiofile}`))
     const intervalRef = useRef()
     const {duration} = audioRef.current;
        
@@ -47,7 +47,7 @@ function ListenArticle({title, oneLiner, category, type, id, language, articleTe
         >
             <img 
                 alt='articleImage' 
-                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
+                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category.imagefile}`} 
                 className='articleImage' 
                 onClick={()=>redirectToArticle()}
                 onMouseEnter={()=> setHover(1)}

@@ -4,13 +4,13 @@ import {startTimer, onPlay, currentTimeToPercentage, currentTimeToTime} from '..
 import AudioTimeline from '../Home/AudioTimeline'
 
 
-function AudioTrackFooter({trackProgressLast, id}) {
+function AudioTrackFooter({trackProgressLast, audiofile}) {
     const [isPlaying, setisPlaying] = useState(false)
     const [time, setTime] = useState('00:00')   
     const [trackPercentage, settrackPercentage] = useState(0)
     const [trackProgress, settrackProgress] = useState(0)
 
-    const audioRef = useRef(new Audio(`${process.env.REACT_APP_SERVER_DOMAIN}/audio/${id}.mp3`))
+    const audioRef = useRef(new Audio(`${process.env.REACT_APP_SERVER_DOMAIN}/audio/${audiofile}`))
     const intervalRef = useRef()
     const {duration} = audioRef.current;
     

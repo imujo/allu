@@ -1,0 +1,24 @@
+.uploadListDiv {
+  gap: 50px;
+}
+
+.cardDiv {
+  margin: 30px 0;
+}
+.fileUploadForm {
+  margin: 0 30px;
+  padding: 50px 0;
+  @include flex(row);
+  gap: 5%;
+  height: 100%;
+  & > * {
+    width: 33%;
+  }
+  & .buttonDiv {
+    @include flex();
+  }
+}
+
+.chooseFile {
+  height: 100%;
+}

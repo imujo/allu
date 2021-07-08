@@ -6,7 +6,7 @@ const BackendContext = createContext();
 const BackendContextProvider = (props) => {
 
     // LANGUAGES
-    const [languageSelected, setlanguageSelected] = useState('none')
+    const [languageSelected, setlanguageSelected] = useState({imageurl: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1315&q=80', language: ''})
     const [languages, setlanguages] = useState([])
 
 
@@ -31,7 +31,7 @@ const BackendContextProvider = (props) => {
     // CATEGORIES
 
     const [categories, setcategories] = useState([])
-    const [selectedCategory, setselectedCategory] = useState('')
+    const [selectedCategory, setselectedCategory] = useState({category: ''})
 
     useEffect(() => {
         fetchCategories(setcategories)
@@ -42,7 +42,7 @@ const BackendContextProvider = (props) => {
 
     let filteredArticles = articles.filter(article =>{
 
-        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && (article.category === selectedCategory || selectedCategory === '') && (article.language === languageSelected || languageSelected === 'none')
+        const filter = article.title.toLowerCase().includes(search.toLowerCase()) && (article.category === selectedCategory.category || selectedCategory.category === '') && (article.language === languageSelected.language || languageSelected.language === '')
         return filter
     })
 

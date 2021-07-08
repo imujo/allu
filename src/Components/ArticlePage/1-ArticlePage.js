@@ -38,8 +38,12 @@ function ArticlePage() {
     }, [id, setarticleData, type, isAuth, user, liked, setUser, setIsAuth])
 
     
-    const {title, username, text, category, clicks} = articleData
+    const {title, created_by, text, category, clicks} = articleData
 
+    let audiofile;
+    if (type === 'listen'){
+        audiofile = articleData.audiofile
+    }
 
     
 
@@ -60,7 +64,7 @@ function ArticlePage() {
                 setliked={setLiked}
                 articleid={id}
                 type={type}
-                username={username}
+                created_by={created_by}
             />
 
             {/* Article Text */}
@@ -70,7 +74,7 @@ function ArticlePage() {
             {
                 type === 'listen' ?
                 
-                <AudioTrackFooter trackProgressLast={trackProgress} id={id} />
+                <AudioTrackFooter trackProgressLast={trackProgress} audiofile={audiofile} />
 
                 :
 
