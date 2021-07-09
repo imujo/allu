@@ -1967,12 +1967,12 @@ p {
   max-width: 1000px;
   margin: 0 auto;
   padding: 100px;
+  margin-bottom: 100px;
 }
 
 @media (max-width: 500px) {
   .articleTextDiv {
     padding: 80px;
-    margin-bottom: 100px;
   }
 }
 
@@ -2387,6 +2387,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
 }
 
 .chooseFile {

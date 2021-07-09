@@ -18,6 +18,13 @@ export const fetchCategories = (setcategories) => {
     .then(data => setcategories(data))
 }
 
+export const fetchCategory = (setCategory, categoryName) => {
+    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/category/${categoryName}`)
+    .then(res => res.json())
+    .then(data => setCategory(data))
+    .catch(e => console.log(e))
+}
+
 export const fetchArticle = (setarticleData, type, id) => {
     fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/article/${type}/${id}`)
     .then(res => res.json())
@@ -120,6 +127,7 @@ export const fetchPostComment = (type, articleId, username, text) => {
     };
 
     fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/addComment/${type}/${articleId}/${username}/${text}`, requestOptions)
+        .then(d => console.log('Commented'))
         .catch(e => console.log("Couldn't connect to the server")) 
 }
 

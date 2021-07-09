@@ -28,7 +28,7 @@ const ListenArticleCreate = (props) => {
                 <SelectInput source='category' choices={categories} validate={[required()]} />
                 <SelectInput source='language' choices={languages} validate={[required()]} />
                 <SelectInput source='audiofile' choices={audioFiles} validate={[required()]} />
-                <RichTextInput multiline source='text' validate={[required()]} />
+                <RichTextInput source='text' validate={[required()]} />
                 <TextInput source='created_by' defaultValue={user.username} disabled />
                 <DateInput label='Published' source='dateadded'  defaultValue={new Date()} disabled  />
             </SimpleForm>

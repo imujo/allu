@@ -2,17 +2,19 @@ import React, { useEffect, useRef, useState } from 'react'
 import { BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom'
 import {startTimer, onPlay} from '../../State/AudioFunctions'
-import { fetchPostClick } from '../../State/StateFunctions'
+import { fetchPostClick, fetchCategory } from '../../State/StateFunctions'
 import AudioTimeline from './AudioTimeline'
 
 
-function ListenArticle({title, oneLiner, category, type, id, audiofile, language, articleText, views, likes, comments}) {
+function ListenArticle({title, oneLiner, categoryname, id, audiofile, language, articleText, views, likes, comments}) {
+
+    const type = 'listen'
 
     const history = useHistory()
 
     const redirectToArticle = () => {
         fetchPostClick(type, id, {})
-        history.push(`/article/${type}/${id}/${trackProgress}`)
+        history.push(`/article/${type}/${id}/${audiofile}/${trackProgress}`)
     }
     const [hover, setHover] = useState(0)
 
@@ -23,21 +25,25 @@ function ListenArticle({title, oneLiner, category, type, id, audiofile, language
     const [trackProgress, settrackProgress] = useState(0)
    
 
-
     const audioRef = useRef(new Audio( `${process.env.REACT_APP_SERVER_DOMAIN}/audio/${audiofile}`))
     const intervalRef = useRef()
     const {duration} = audioRef.current;
        
 
+    const [category, setCategory] = useState({})
 
     useEffect(() => {
+
+        fetchCategory(setCategory, categoryname)
+
         return () => {
             // eslint-disable-next-line react-hooks/exhaustive-deps
             audioRef.current.pause();
             // eslint-disable-next-line react-hooks/exhaustive-deps
             clearInterval(intervalRef.current)
         }
-    }, [])
+    }, [categoryname])
+
 
 
     return (
@@ -54,7 +60,7 @@ function ListenArticle({title, oneLiner, category, type, id, audiofile, language
                 onMouseLeave={()=> setHover(0)}
             />
 
-            <div className="categoryImageFont articleCategory">{category}</div>
+            <div className="categoryImageFont articleCategory">{categoryname}</div>
 
             <div className="articleText" >
                 <div 

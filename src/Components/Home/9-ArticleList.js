@@ -19,8 +19,7 @@ function ArticleList({loadedArticles}) {
                                     <ReadArticle
                                         title={article.title}
                                         oneLiner={article.oneliner}
-                                        category={article.category}
-                                        type={article.articletype}
+                                        categoryname={article.category}
                                         id = {article.id}
                                         language={article.language}
                                         articleText={article.text}
@@ -31,8 +30,7 @@ function ArticleList({loadedArticles}) {
                                     <ListenArticle
                                         title={article.title}
                                         oneLiner={article.oneliner}
-                                        category={article.category}
-                                        type={article.articleType}
+                                        categoryname={article.category}
                                         id = {article.id}
                                         language={article.language}
                                         articleText={article.text}

@@ -11,7 +11,6 @@ function ListenArticleList(props) {
                 <TextField source='category' />
                 <TextField source='language' />
                 <TextField source='created_by' />
-                <TextField source='text' />
                 <TextField source='audiofile' />
                 <DateField source='dateadded' />
                 <EditButton basePath='/listenArticles' />

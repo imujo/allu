@@ -13,11 +13,12 @@ function ArticleHeader({title, clicks, created_by, likes, category, liked, setli
     const [isAuth, ] = isAuthGlobal
 
     const [comments, setComments] = useState([])
+    const [fetchCommentsToggle, setFetchCommentsToggle] = useState(false)
 
     useEffect(() => {
         fetchComments(setComments, type, articleid)
         
-    }, [type, articleid, setComments])
+    }, [type, articleid, fetchCommentsToggle])
 
     return (
         <div className='articleHeaderDiv' >
@@ -42,12 +43,12 @@ function ArticleHeader({title, clicks, created_by, likes, category, liked, setli
                 <Stats clicks={clicks} comments={comments} likes={likes} />
             </div>
             <div className="comments">
-                <Comments comments={comments} setcomments={setComments} type={type} articleid={articleid} username={user.username} />
+                <Comments comments={comments} setcomments={setComments} type={type} articleid={articleid} username={user.username} setfetchcommentstoggle={setFetchCommentsToggle} fetchcommentstoggle={fetchCommentsToggle} />
             </div>
             <div className="articlePageImageSection">
                 <img 
                     alt='articleImage' 
-                    src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category}.svg`} 
+                    src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category.imagefile}`} 
                     className="articlePageImage"  
                 />
             </div>

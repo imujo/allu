@@ -4,7 +4,7 @@ import ArticleHeader from './2-ArticleHeader'
 import ArticleText from './5-ArticleText'
 import AudioTrackFooter from '../Random/AudioTrackFooter'
 import {useParams} from 'react-router-dom'
-import { fetchArticle, fetchComments, fetchLikes, fetchUserArticleLike} from '../../State/StateFunctions'
+import { fetchArticle, fetchLikes, fetchUserArticleLike, fetchCategory} from '../../State/StateFunctions'
 import {BackendContext} from '../../State/BackendState'
 import Auth from '../Random/Auth'
 
@@ -13,21 +13,27 @@ import Auth from '../Random/Auth'
 
 function ArticlePage() {
 
-    const {type, id, trackProgress} = useParams();
+    const {type, id, audiofile, trackProgress} = useParams();
 
     const {authOpenGlobal, userGlobal, isAuthGlobal} = useContext(BackendContext)
     const [authOpen, setAuthOpen] = authOpenGlobal
     const [user, setUser] = userGlobal
     const [isAuth, setIsAuth] = isAuthGlobal
 
-    const [articleData, setarticleData] = useState({comments: [{user: 'a', message: 'a'}]})
+    const [articleData, setarticleData] = useState({comments: [{user: 'a', message: 'a'}], text: ''})
     const [likes, setLikes] = useState(0)
     const [liked, setLiked] = useState(false)
+    const [categoryObject, setCategoryObject] = useState({})
 
     
+    const {title, created_by, text, category, clicks} = articleData
+
+
+
     useEffect(() => {
         fetchArticle(setarticleData, type, id)
         fetchLikes(setLikes, type, id)
+        fetchCategory(setCategoryObject, category)
         if (isAuth) {
             fetchUserArticleLike(type, id, user.id, setLiked)
         }else{
@@ -35,18 +41,16 @@ function ArticlePage() {
         }
 
 
-    }, [id, setarticleData, type, isAuth, user, liked, setUser, setIsAuth])
+    }, [id, setarticleData, type, isAuth, user, liked, setUser, setIsAuth, category])
 
     
-    const {title, created_by, text, category, clicks} = articleData
-
-    let audiofile;
-    if (type === 'listen'){
-        audiofile = articleData.audiofile
-    }
-
     
 
+
+    
+    
+
+    
 
     return (
         <div className='articlePageDiv' >
@@ -59,7 +63,7 @@ function ArticlePage() {
                 title={title} 
                 clicks={clicks} 
                 likes={likes} 
-                category={category} 
+                category={categoryObject} 
                 liked={liked}
                 setliked={setLiked}
                 articleid={id}

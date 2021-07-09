@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineSend } from 'react-icons/ai';
 import { fetchPostComment, fetchComments } from '../../State/StateFunctions'
 
 
-function Comments({type, comments, setcomments, articleid, username}) {
+function Comments({type, comments, setfetchcommentstoggle, fetchcommentstoggle, setcomments, articleid, username}) {
 
     const [commentText, setCommentText] = useState('')
 
@@ -11,11 +11,15 @@ function Comments({type, comments, setcomments, articleid, username}) {
     const addComment = (e) => {
         e.preventDefault()
 
+        console.log('Add a comment')
+
         fetchPostComment(type, articleid, username, commentText)
 
         fetchComments(setcomments, type, articleid)
         
         setCommentText('')
+
+        setfetchcommentstoggle(!fetchcommentstoggle)
     }
     
 

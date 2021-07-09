@@ -45,7 +45,9 @@ export const startTimer = (intervalRef, audioRef, setisPlaying, setTime, settrac
 }
 
 export const onPlay = (audioRef, intervalRef, setTime, settrackProgress, settrackPercentage, setisPlaying, startTimer) => {
-    audioRef.current.play(); 
+    audioRef.current.play()
+        .then(console.log('play')) 
+        .catch(e => console.log(e))
     setisPlaying(true); 
     startTimer(intervalRef, audioRef, setisPlaying, setTime, settrackProgress, settrackPercentage)
 }

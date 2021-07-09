@@ -17,8 +17,8 @@ function Header() {
         focus: 'center',
         start: 4,
         height: "auto",
-
     } 
+
     
     const {languagesGlobal, languageSelectedGlobal} = useContext(BackendContext);
     const [languages,] = languagesGlobal

@@ -1,6 +1,5 @@
 import React from 'react'
 import FileUpload from './FileUpload'
-import { Paper } from '@material-ui/core';
 
 
 const UploadList = (props) => {

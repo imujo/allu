@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Button, Card } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+
 
 
 const FileUpload = ({type}) => {
 
     const [file, setFile] = useState('')
-    const [uploadedFile, setUploadedFile] = useState({})
+    const [uploaded, setUploaded] = useState('')
 
 
     const onChange = (e) => {
@@ -30,16 +32,19 @@ const FileUpload = ({type}) => {
                 }
             })
 
-            const {fileName, filePath} = res.data
-            setUploadedFile({ fileName, filePath})
+            setUploaded(res.data)
 
-            console.log(uploadedFile)
         } catch (err) {
             console.log('Error')
             console.log(err.response.data.msg)
         }
     }
     
+    useEffect(() => {
+        if (uploaded !== {}){
+            setTimeout(()=>setUploaded(''), 5000)
+        }
+    }, [uploaded])
 
     return (
         <Card variant="outlined" className='cardDiv' >
@@ -48,7 +53,22 @@ const FileUpload = ({type}) => {
                 <input type="file" className='chooseFile' id='customFile' onChange={onChange} />
                 <div className='buttonDiv'>
                     <Button variant="contained" onClick={onSubmit} >Upload</Button>
+
+                    {
+                        typeof uploaded !== 'string' ?
+                            
+                            uploaded.status ? 
+                                <Alert severity="success">Uploaded</Alert>
+                                :
+                                <Alert severity="error">Not Uploaded</Alert>
+                            
+                            :
+                            <p></p>
+                    }
+                    
                 </div>
+
+
     
             </form>
         </Card>

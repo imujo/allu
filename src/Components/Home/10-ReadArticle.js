@@ -1,19 +1,25 @@
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { fetchPostClick} from '../../State/StateFunctions'
+import { fetchPostClick, fetchCategory} from '../../State/StateFunctions'
 
 
-function ReadArticle({title, oneLiner, category, type, id, language, articleText, clicks, likes, comments}) {
+function ReadArticle({title, oneLiner, categoryname, id, language, articleText, clicks, likes, comments}) {
 
     const history = useHistory()
 
- 
+    const type = 'read';
 
     const redirectToArticle = () => {
         fetchPostClick(type, id, {})
-        history.push(`/article/${type}/${id}/0`)
+        history.push(`/article/${type}/${id}/read/0`)
     }
     const [hover, setHover] = useState(0)
+    const [category, setCategory] = useState({})
+
+    useEffect(() => {
+        fetchCategory(setCategory, categoryname)
+
+    }, [categoryname])
 
     return (
         <div 
@@ -29,7 +35,7 @@ function ReadArticle({title, oneLiner, category, type, id, language, articleText
                 className='articleImage' 
             />
 
-            <div className="categoryImageFont articleCategory">{category}</div>
+            <div className="categoryImageFont articleCategory">{categoryname}</div>
 
             <div className="articleText" >
                 <div 

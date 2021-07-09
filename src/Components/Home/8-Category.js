@@ -19,7 +19,7 @@ function Category({category, iconfile}) {
 
     const onCategoryClick = () => {
         if (selectedCategory.category === category.category){
-            setselectedCategory({caegory: ''})
+            setselectedCategory({category: ''})
         }else{
             setselectedCategory(category)
         }
