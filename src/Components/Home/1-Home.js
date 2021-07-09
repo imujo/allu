@@ -1,49 +1,35 @@
-import React, { useContext } from 'react'
-import Nav from './2-Nav'
-import Header from './3-Header'
-import Body from './4-Body'
-import Footer from './11-Footer'
-import Auth from '../Random/Auth'
-import {BackendContext} from '../../State/BackendState'
+import React, { useContext } from "react";
+import Nav from "./2-Nav";
+import Header from "./3-Header";
+import Body from "./4-Body";
+import Footer from "./11-Footer";
+import Auth from "../Random/Auth";
+import { BackendContext } from "../../State/BackendState";
 
 function Home() {
+  const { authOpenGlobal } = useContext(BackendContext);
+  const [authOpen, setAuthOpen] = authOpenGlobal;
 
-    const {authOpenGlobal} = useContext(BackendContext)
-    const [authOpen, setAuthOpen] = authOpenGlobal
+  return (
+    <div>
+      {/* Nav */}
+      <Nav />
 
-    return (
-        <div>
+      {/* Header */}
+      <Header />
 
-            {/* Nav */}
-            <Nav />
+      {/* Body */}
+      <Body />
 
+      {/* Footer */}
+      <Footer />
 
-            {/* Header */}
-            <Header />
-
-
-            {/* Body */}
-            <Body />
-
-
-            {/* Footer */}
-            <Footer />
-
-
-            {/* Auth */}
-            {
-                authOpen === '' ?
-                    undefined
-                    :
-                    <Auth type={authOpen} setAuthOpen={setAuthOpen} />
-            }
-
-
-
-
-        </div>
-    )
+      {/* Auth */}
+      {authOpen === "" ? undefined : (
+        <Auth type={authOpen} setAuthOpen={setAuthOpen} />
+      )}
+    </div>
+  );
 }
 
-export default Home
-
+export default Home;

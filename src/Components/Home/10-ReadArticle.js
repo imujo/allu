@@ -1,59 +1,47 @@
-import React, {useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { fetchPostClick, fetchCategory} from '../../State/StateFunctions'
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { fetchPostClick, fetchCategory } from "../../State/StateFunctions";
 
+function ReadArticle({ title, oneLiner, categoryname, id }) {
+  const history = useHistory();
 
-function ReadArticle({title, oneLiner, categoryname, id, language, articleText, clicks, likes, comments}) {
+  const type = "read";
 
-    const history = useHistory()
+  const redirectToArticle = () => {
+    fetchPostClick(type, id, {});
+    history.push(`/article/${type}/${id}/read/0`);
+  };
+  const [hover, setHover] = useState(0);
+  const [category, setCategory] = useState({});
 
-    const type = 'read';
+  useEffect(() => {
+    fetchCategory(setCategory, categoryname);
+  }, [categoryname]);
 
-    const redirectToArticle = () => {
-        fetchPostClick(type, id, {})
-        history.push(`/article/${type}/${id}/read/0`)
-    }
-    const [hover, setHover] = useState(0)
-    const [category, setCategory] = useState({})
+  return (
+    <div
+      className="articleDiv"
+      hover={hover}
+      onMouseEnter={() => setHover(1)}
+      onMouseLeave={() => setHover(0)}
+      onClick={() => redirectToArticle()}
+    >
+      <img
+        alt="articleImage"
+        src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category.imagefile}`}
+        className="articleImage"
+      />
 
-    useEffect(() => {
-        fetchCategory(setCategory, categoryname)
+      <div className="categoryImageFont articleCategory">{categoryname}</div>
 
-    }, [categoryname])
-
-    return (
-        <div 
-            className='articleDiv' 
-            hover={hover}   
-            onMouseEnter={()=> setHover(1)}
-            onMouseLeave={()=> setHover(0)}
-            onClick={()=>redirectToArticle()}
-        >
-            <img 
-                alt='articleImage' 
-                src={`${process.env.REACT_APP_SERVER_DOMAIN}/categoryImages/${category.imagefile}`} 
-                className='articleImage' 
-            />
-
-            <div className="categoryImageFont articleCategory">{categoryname}</div>
-
-            <div className="articleText" >
-                <div 
-                    className="text" 
-                >
-                    <h6>{title}</h6>
-                    <div 
-                        className="oneLinerFont oneLiner"
-                        
-                        >
-                        {`"${oneLiner}"`}
-                    </div>
-                </div> 
-                
-            </div>
-
+      <div className="articleText">
+        <div className="text">
+          <h6>{title}</h6>
+          <div className="oneLinerFont oneLiner">{`"${oneLiner}"`}</div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default ReadArticle
+export default ReadArticle;
