@@ -82,10 +82,7 @@ export const onPlay = (
   setisPlaying,
   startTimer
 ) => {
-  audioRef.current
-    .play()
-    .then(console.log("play"))
-    .catch((e) => console.log(e));
+  audioRef.current.play();
   setisPlaying(true);
   startTimer(
     intervalRef,

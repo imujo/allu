@@ -59,11 +59,6 @@ function Nav() {
           menuisopen={menuIsOpen.toString()}
           onAnimationEnd={onAnimationEnd}
         >
-          <ul>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-
           <div className="authButtons">
             {isAuth ? (
               <>

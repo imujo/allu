@@ -59,7 +59,7 @@ function ListenArticle({ title, oneLiner, categoryname, id, audiofile }) {
           onMouseLeave={() => setHover(0)}
         >
           <h6>{title}</h6>
-          <div className="oneLinerFont oneLiner">{`"${oneLiner}"`}</div>
+          <div className="oneLinerFont oneLiner">{oneLiner}</div>
         </div>
 
         {isPlaying ? (

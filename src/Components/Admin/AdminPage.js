@@ -18,6 +18,8 @@ import UsersList from "./Users/UsersList";
 import UsersEdit from "./Users/UsersEdit";
 import UsersCreate from "./Users/UsersCreate";
 import UploadList from "./UploadList";
+import MiscList from "./Misc/MiscList";
+import MiscEdit from "./Misc/MiscEdit";
 
 function AdminPage() {
   return (
@@ -58,6 +60,7 @@ function AdminPage() {
         edit={UsersEdit}
       />
       <Resource name="upload" list={UploadList} />
+      <Resource name="misc" list={MiscList} edit={MiscEdit} />
     </Admin>
   );
 }

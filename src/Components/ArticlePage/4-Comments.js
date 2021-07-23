@@ -16,8 +16,6 @@ function Comments({
   const addComment = (e) => {
     e.preventDefault();
 
-    console.log("Add a comment");
-
     fetchPostComment(type, articleid, username, commentText);
 
     fetchComments(setcomments, type, articleid);
@@ -51,6 +49,7 @@ function Comments({
           onChange={(e) => setCommentText(e.target.value)}
           className="leaveComment"
           placeholder="Comment"
+          maxLength="50"
         ></input>
         <button type="submit">
           <AiOutlineSend className="commentIcon" />

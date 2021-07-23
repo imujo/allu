@@ -116,8 +116,7 @@ function Auth({ type, setAuthOpen }) {
           onClick={() => setAuthOpen(switchTo)}
           className="switchAuthFont bold"
         >
-          {" "}
-          {switchButton}{" "}
+          {switchButton}
         </p>
       </div>
 

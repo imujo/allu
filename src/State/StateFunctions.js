@@ -144,6 +144,13 @@ export const fetchPostComment = (type, articleId, username, text) => {
     .catch(() => console.log("Couldn't connect to the server"));
 };
 
+export const fetchAboutText = (setAboutText) => {
+  fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/aboutText`)
+    .then((res) => res.json())
+    .then((data) => setAboutText(data))
+    .catch(() => console.log("Error getting About text"));
+};
+
 export const onClickLoadMore = (
   filteredArticles,
   loadedArticles,

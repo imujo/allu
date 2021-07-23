@@ -1,6 +1,5 @@
 .articleDiv {
   @include size(285px, 340px);
-  // @include click($s2: 2px, $s3: 5px, $shadowActive: 1);
   cursor: pointer;
 
   &[hover="1"] {
@@ -22,17 +21,6 @@
     box-sizing: border-box;
     object-position: center;
     object-fit: contain;
-  }
-
-  & .imageOverlay {
-    @include size(200px, 340px);
-    background-image: linear-gradient(
-      to bottom right,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.3)
-    );
-    position: absolute;
-    top: 0;
   }
 
   & .articleCategory {

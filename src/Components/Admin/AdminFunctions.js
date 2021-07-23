@@ -13,7 +13,6 @@ const createGroup = (list, key) => {
       });
     }
   });
-  console.log(group);
   return group;
 };
 

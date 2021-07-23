@@ -1,5 +1,6 @@
 .logoDiv {
   @include flex(row, flex-start);
+  cursor: pointer;
 
   .logo {
     display: block;

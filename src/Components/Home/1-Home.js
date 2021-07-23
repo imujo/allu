@@ -5,6 +5,7 @@ import Body from "./4-Body";
 import Footer from "./11-Footer";
 import Auth from "../Random/Auth";
 import { BackendContext } from "../../State/BackendState";
+import ContactAbout from "./ContactAbout";
 
 function Home() {
   const { authOpenGlobal } = useContext(BackendContext);
@@ -20,6 +21,9 @@ function Home() {
 
       {/* Body */}
       <Body />
+
+      {/* Contact & About */}
+      <ContactAbout />
 
       {/* Footer */}
       <Footer />

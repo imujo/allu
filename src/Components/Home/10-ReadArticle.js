@@ -37,7 +37,7 @@ function ReadArticle({ title, oneLiner, categoryname, id }) {
       <div className="articleText">
         <div className="text">
           <h6>{title}</h6>
-          <div className="oneLinerFont oneLiner">{`"${oneLiner}"`}</div>
+          <div className="oneLinerFont oneLiner">{oneLiner}</div>
         </div>
       </div>
     </div>

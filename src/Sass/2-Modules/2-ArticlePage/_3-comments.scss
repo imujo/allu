@@ -29,8 +29,9 @@
   }
 
   & .comment {
-    @include flex(row);
+    @include flex(row, $jc: flex-start);
     gap: 20px;
+    max-width: 100%;
 
     & .userIcon {
       border-radius: 20px;
@@ -43,6 +44,8 @@
       background-color: $backgroundPurple;
       padding: 5px 15px;
       border-radius: 7px;
+      max-width: 50%;
+      overflow-wrap: break-word;
     }
   }
 
