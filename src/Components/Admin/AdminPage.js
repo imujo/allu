@@ -63,7 +63,7 @@ function AdminPage() {
         edit={UsersEdit}
       />
       <Resource name="upload" list={UploadList} />
-      <Resource name="misc" list={MiscList} edit={MiscEdit} />
+      {/* <Resource name="misc" list={MiscList} edit={MiscEdit} /> */}
       <Resource
         name="fileListenArticle"
         list={fileListenArticleList}
