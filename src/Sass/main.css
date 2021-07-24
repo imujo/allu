@@ -1481,6 +1481,7 @@ p {
 }
 
 .contactAboutBackground {
+  display: none;
   background-color: #ede9fe;
   width: 100%;
 }
