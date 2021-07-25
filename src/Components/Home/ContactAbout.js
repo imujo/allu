@@ -65,6 +65,10 @@ const ContactAbout = () => {
             placeholder="Message"
             required
           />
+          <div className="checkboxDiv">
+            <input type="checkbox" name="consent" required />
+            <label htmlFor="consent">I accept sharing my email address</label>
+          </div>
           <input type="submit" name="submit" />
           <div className="message ">
             <p className={`${alertType}Font`}>{alert}</p>

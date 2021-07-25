@@ -1481,7 +1481,6 @@ p {
 }
 
 .contactAboutBackground {
-  display: none;
   background-color: #ede9fe;
   width: 100%;
 }
@@ -1539,7 +1538,7 @@ p {
           box-shadow: none;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input,
+.contactAboutBackground .contactAboutDiv .contact input[type="email"],
 .contactAboutBackground .contactAboutDiv .contact textarea {
   background: white;
   max-width: 500px;
@@ -1554,24 +1553,36 @@ p {
           box-sizing: border-box;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input::-webkit-input-placeholder,
+.contactAboutBackground .contactAboutDiv .contact input[type="email"]::-webkit-input-placeholder,
 .contactAboutBackground .contactAboutDiv .contact textarea::-webkit-input-placeholder {
   color: #837e9f;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input:-ms-input-placeholder,
+.contactAboutBackground .contactAboutDiv .contact input[type="email"]:-ms-input-placeholder,
 .contactAboutBackground .contactAboutDiv .contact textarea:-ms-input-placeholder {
   color: #837e9f;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input::-ms-input-placeholder,
+.contactAboutBackground .contactAboutDiv .contact input[type="email"]::-ms-input-placeholder,
 .contactAboutBackground .contactAboutDiv .contact textarea::-ms-input-placeholder {
   color: #837e9f;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input::placeholder,
+.contactAboutBackground .contactAboutDiv .contact input[type="email"]::placeholder,
 .contactAboutBackground .contactAboutDiv .contact textarea::placeholder {
   color: #837e9f;
+}
+
+.contactAboutBackground .contactAboutDiv .contact .checkboxDiv {
+  margin-top: 20px;
+  font-family: "Montserrat";
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contactAboutBackground .contactAboutDiv .contact textarea {
