@@ -6,7 +6,6 @@ import { BackendContext } from "../../State/BackendState";
 
 function Categories() {
   const options = {
-    type: "loop",
     autoWidth: true,
     drag: true,
     gap: "10px",

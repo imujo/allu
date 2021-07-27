@@ -6,7 +6,6 @@ import { BackendContext } from "../../State/BackendState";
 
 function Header() {
   const options = {
-    type: "loop",
     autoWidth: true,
     drag: true,
     gap: "40px",
