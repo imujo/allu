@@ -20,9 +20,9 @@ import UsersCreate from "./Users/UsersCreate";
 import UploadList from "./UploadList";
 import MiscList from "./Misc/MiscList";
 import MiscEdit from "./Misc/MiscEdit";
-import fileListenArticleList from "./Files/ListenArticle/fileListenArticleList";
-import fileListenArticleCreate from "./Files/ListenArticle/fileListenArticleCreate";
-import fileLIstenArticleEdit from "./Files/ListenArticle/fileListenArticleEdit";
+// import fileListenArticleList from "./Files/ListenArticle/fileListenArticleList";
+// import fileListenArticleCreate from "./Files/ListenArticle/fileListenArticleCreate";
+// import fileLIstenArticleEdit from "./Files/ListenArticle/fileListenArticleEdit";
 
 function AdminPage() {
   return (
@@ -64,12 +64,12 @@ function AdminPage() {
       />
       <Resource name="upload" list={UploadList} />
       <Resource name="misc" list={MiscList} edit={MiscEdit} />
-      <Resource
+      {/* <Resource
         name="fileListenArticle"
         list={fileListenArticleList}
         create={fileListenArticleCreate}
         edit={fileLIstenArticleEdit}
-      />
+      /> */}
     </Admin>
   );
 }

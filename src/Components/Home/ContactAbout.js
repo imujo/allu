@@ -67,7 +67,9 @@ const ContactAbout = () => {
           />
           <div className="checkboxDiv">
             <input type="checkbox" name="consent" required />
-            <label htmlFor="consent">I accept sharing my email address</label>
+            <label htmlFor="consent">
+              Allow All U to contact me at this email address
+            </label>
           </div>
           <input type="submit" name="submit" />
           <div className="message ">
