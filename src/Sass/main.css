@@ -1740,7 +1740,12 @@ p {
   padding-left: 70px;
 }
 
+.articleHeaderDiv .articlePageTitleSection h1 {
+  font-size: 50px;
+}
+
 .articleHeaderDiv .articlePageTitleSection .user {
+  padding-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1837,7 +1842,7 @@ p {
 
 @media (max-width: 1400px) {
   .articleHeaderDiv {
-    height: 700px;
+    height: 800px;
   }
   .articleHeaderDiv .articlePageImageSection .articlePageImage {
     height: 460px;
@@ -1879,6 +1884,7 @@ p {
   }
   .articleHeaderDiv .articlePageTitleSection h1 {
     text-align: center;
+    font-size: 45px;
   }
   .articleHeaderDiv .articlePageTitleSection .user {
     gap: 5px;
@@ -1910,7 +1916,11 @@ p {
 
 @media (max-width: 500px) {
   .articleHeaderDiv {
+    width: 90%;
     height: 500px;
+  }
+  .articleHeaderDiv .articlePageTitleSection h1 {
+    font-size: 30px;
   }
 }
 
@@ -2123,8 +2133,8 @@ p {
 
 @media (max-width: 500px) {
   .commentsDiv {
-    height: 170px;
-    width: 247px;
+    height: 150px;
+    width: 220px;
     padding: 10px 20px;
   }
   .commentsDiv .commentsList {

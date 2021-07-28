@@ -15,7 +15,12 @@
     @include flex($ai: flex-start);
     padding-left: 70px;
 
+    & h1 {
+      font-size: 50px;
+    }
+
     & .user {
+      padding-top: 10px;
       @include flex($direction: row);
       gap: 40px;
       margin-left: 20px;
@@ -55,7 +60,7 @@
 
 @media (max-width: 1400px) {
   .articleHeaderDiv {
-    height: 700px;
+    height: 800px;
 
     & .articlePageImageSection .articlePageImage {
       @include size(460px);
@@ -74,6 +79,7 @@
 
       & h1 {
         text-align: center;
+        font-size: 45px;
       }
 
       & .user {
@@ -99,6 +105,11 @@
 
 @media (max-width: 500px) {
   .articleHeaderDiv {
+    width: 90%;
     height: 500px;
+
+    & .articlePageTitleSection h1 {
+      font-size: 30px;
+    }
   }
 }

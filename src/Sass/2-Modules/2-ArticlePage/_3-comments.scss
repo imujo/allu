@@ -77,7 +77,7 @@
 
 @media (max-width: 500px) {
   .commentsDiv {
-    @include size(170px, 247px);
+    @include size(150px, 220px);
     padding: 10px 20px;
 
     & .commentsList {
