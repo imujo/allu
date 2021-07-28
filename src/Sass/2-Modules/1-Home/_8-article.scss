@@ -46,6 +46,9 @@
     padding: 10px;
     background-color: darken($backgroundPurple, 6%);
     @include flex(row, $jc: space-between);
+    & h6 {
+      overflow: hidden;
+    }
 
     & .text {
       @include flex($ai: flex-start, $jc: space-around);

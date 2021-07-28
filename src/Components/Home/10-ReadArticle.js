@@ -18,6 +18,10 @@ function ReadArticle({ title, oneLiner, categoryname, id }) {
     fetchCategory(setCategory, categoryname);
   }, [categoryname]);
 
+  if (title.length > 30) {
+    title = `${title.substring(0, 30)}...`;
+  }
+
   return (
     <div
       className="articleDiv"

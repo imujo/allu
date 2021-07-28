@@ -27,10 +27,20 @@ function ArticleHeader({
     fetchComments(setComments, type, articleid);
   }, [type, articleid, fetchCommentsToggle]);
 
+  const [newTitle, setNewTitle] = useState("");
+  useEffect(() => {
+    if (title) {
+      if (title.length > 10) {
+        console.log(title.length);
+        setNewTitle(`${title.substring(0, 20)}...`);
+      }
+    }
+  }, [title]);
+
   return (
     <div className="articleHeaderDiv">
       <div className="articlePageTitleSection">
-        <h1>{title}</h1>
+        <h1>{newTitle}</h1>
         <div className="user">
           <h2>by {created_by}</h2>
           <div

@@ -38,6 +38,10 @@ function ListenArticle({ title, oneLiner, categoryname, id, audiofile }) {
     };
   }, [categoryname]);
 
+  if (title.length > 30) {
+    title = `${title.substring(0, 30)}...`;
+  }
+
   return (
     <div className="articleDiv" hover={hover}>
       <img

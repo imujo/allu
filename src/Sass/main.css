@@ -120,7 +120,7 @@ h5 {
 
 h6 {
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
+  font-size: 29px;
   font-weight: 500;
   color: #280b38;
   margin: 0;
@@ -208,7 +208,7 @@ p {
     font-size: 15px;
   }
   h6 {
-    font-size: 25px;
+    font-size: 21px;
   }
   li {
     font-size: 12px;
@@ -225,6 +225,12 @@ p {
   }
   .commentTitleFont {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 70px;
   }
 }
 
@@ -520,7 +526,6 @@ p {
   .navDiv .links {
     width: 50vw;
     gap: 20px;
-    position: absolute;
   }
   .navDiv .links ul,
   .navDiv .links .authButtons {
@@ -1365,6 +1370,10 @@ p {
           align-items: center;
 }
 
+.articleDiv .articleText h6 {
+  overflow: hidden;
+}
+
 .articleDiv .articleText .text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1867,6 +1876,9 @@ p {
         -ms-flex-align: center;
             align-items: center;
     padding-left: 0;
+  }
+  .articleHeaderDiv .articlePageTitleSection h1 {
+    text-align: center;
   }
   .articleHeaderDiv .articlePageTitleSection .user {
     gap: 5px;
