@@ -38,12 +38,7 @@ export const getNumberOfLanguages = (setNumberOfLanguages) => {
   fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/languages`)
     .then((res) => res.json())
     .then((data) => {
-      let array = [];
-      for (let i = 0; i < data.length; i++) {
-        array.push(String(i + 1));
-      }
-      console.log(array);
-      setNumberOfLanguages(array);
+      setNumberOfLanguages(data.length);
     });
 };
 

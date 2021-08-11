@@ -6,12 +6,13 @@ import {
   TextInput,
   required,
   maxLength,
+  TextField,
 } from "react-admin";
 import { getDirItems, getNumberOfLanguages } from "../AdminFunctions";
 
 const LanguagesEdit = (props) => {
   const [dirItems, setDirItems] = useState([]);
-  const [numberOfLanguages, setNumberOfLanguages] = useState([]);
+  const [numberOfLanguages, setNumberOfLanguages] = useState(0);
 
   useEffect(() => {
     getDirItems(setDirItems, "flags");
@@ -23,7 +24,8 @@ const LanguagesEdit = (props) => {
     <Edit title="Edit Language" {...props}>
       <SimpleForm>
         <TextInput source="id" disabled />
-        <SelectInput source="order_number" choices={numberOfLanguages} />
+        <TextField defaultValue={`1 to ${numberOfLanguages}`} />
+        <TextInput source="order_number" />
         <TextInput source="language" validate={[required(), maxLength(30)]} />
         <TextInput source="imageurl" validate={[required(), maxLength(300)]} />
         <SelectInput
