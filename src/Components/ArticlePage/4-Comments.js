@@ -27,7 +27,7 @@ function Comments({
 
   return (
     <div className="commentsDiv">
-      <div className="commentTitleFont">Comments</div>
+      <div className="commentTitleFont">Practice</div>
 
       <div className="commentsList">
         {comments.map((comment, i) => {

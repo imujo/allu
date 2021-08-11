@@ -1761,6 +1761,7 @@ p {
           align-items: center;
   gap: 40px;
   margin-left: 20px;
+  display: none;
 }
 
 .articleHeaderDiv .articlePageTitleSection .like {
@@ -1902,6 +1903,7 @@ p {
         -ms-flex-align: center;
             align-items: center;
     margin-left: 0;
+    display: none;
   }
   .articleHeaderDiv .articleStatsSection {
     padding-left: 0;
