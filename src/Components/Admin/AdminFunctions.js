@@ -37,7 +37,14 @@ export const getDirItems = (setDirItems, dir) => {
 export const getNumberOfLanguages = (setNumberOfLanguages) => {
   fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/languages`)
     .then((res) => res.json())
-    .then((data) => setNumberOfLanguages([...Array(data.length).keys()]));
+    .then((data) => {
+      console.log(data);
+      let array = [];
+      for (let i = 0; i < data.length; i++) {
+        array.push(i + 1);
+      }
+      setNumberOfLanguages(array);
+    });
 };
 
 export const PostPagination = (props) => (
