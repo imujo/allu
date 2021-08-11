@@ -7,19 +7,22 @@ import {
   required,
   maxLength,
 } from "react-admin";
-import { getDirItems } from "../AdminFunctions";
+import { getDirItems, getNumberOfLanguages } from "../AdminFunctions";
 
 const LanguagesEdit = (props) => {
   const [dirItems, setDirItems] = useState([]);
+  const [numberOfLanguages, setNumberOfLanguages] = useState(0);
 
   useEffect(() => {
     getDirItems(setDirItems, "flags");
+    getNumberOfLanguages(setNumberOfLanguages);
   }, []);
 
   return (
     <Edit title="Edit Language" {...props}>
       <SimpleForm>
         <TextInput source="id" disabled />
+        <SelectInput source="order_number" choices={numberOfLanguages} />
         <TextInput source="language" validate={[required(), maxLength(30)]} />
         <TextInput source="imageurl" validate={[required(), maxLength(300)]} />
         <SelectInput

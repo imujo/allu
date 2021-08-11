@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchAboutText } from "../../State/StateFunctions";
 import parse from "html-react-parser";
+import emailjs from "emailjs-com";
 
 const ContactAbout = () => {
   const [email, setEmail] = useState("");
@@ -10,40 +11,33 @@ const ContactAbout = () => {
   const [alert, setAlert] = useState("");
   const [alertType, setAlertType] = useState("");
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    console.log("sendEmail");
-
-    fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/sendEmail`, {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        message: message,
-      }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status === "success") {
-          setAlertType("success");
-          setAlert("Email sent");
-          setEmail("");
-          setMessage("");
-          setTimeout(() => setAlert(""), 5000);
-        } else if (response.status === "fail") {
-          setAlertType("error");
-          setAlert("There has been an error - Email not sent");
-          setTimeout(() => setAlert(""), 5000);
-        }
-      });
-  };
-
   useEffect(() => {
     fetchAboutText(setAboutText);
   }, []);
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_naqvbpe",
+        "template_3w8fugs",
+        e.target,
+        "user_ZUNAFf6TZZxZRFMtprPYG"
+      )
+      .then(
+        (result) => {
+          setAlertType("success");
+          setTimeout(() => setAlert(result.text), 3000);
+          console.log(result.text);
+        },
+        (error) => {
+          setAlertType("error");
+          setTimeout(() => setAlert(error.text), 3000);
+          console.log(error.text);
+        }
+      );
+  }
 
   return (
     <div className="contactAboutBackground">

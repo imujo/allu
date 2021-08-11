@@ -34,6 +34,12 @@ export const getDirItems = (setDirItems, dir) => {
     .then((data) => setDirItems(createGroup(data, "")));
 };
 
+export const getNumberOfLanguages = (setNumberOfLanguages) => {
+  fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/languages`)
+    .then((res) => res.json())
+    .then((data) => setNumberOfLanguages([...Array(data.length).keys()]));
+};
+
 export const PostPagination = (props) => (
   <Pagination rowsPerPageOptions={[10, 25, 50, 100, 200]} {...props} />
 );

@@ -14,6 +14,7 @@ function LanguagesList(props) {
     <List {...props} pagination={<PostPagination />}>
       <Datagrid>
         <TextField source="id" />
+        <TextField source="order_number" />
         <TextField source="language" />
         <TextField source="imageurl" />
         <TextField source="flagfile" />
