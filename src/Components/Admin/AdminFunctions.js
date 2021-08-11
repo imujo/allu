@@ -40,7 +40,7 @@ export const getNumberOfLanguages = (setNumberOfLanguages) => {
     .then((data) => {
       let array = [];
       for (let i = 0; i < data.length; i++) {
-        array.push(i + 1);
+        array.push(String(i + 1));
       }
       console.log(array);
       setNumberOfLanguages(array);
