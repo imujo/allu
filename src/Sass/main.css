@@ -1495,119 +1495,19 @@ p {
 }
 
 .contactAboutBackground .contactAboutDiv {
-  min-height: 400px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% auto;
-      grid-template-columns: 50% auto;
-  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .contactAboutBackground .contactAboutDiv > * {
   padding: 40px;
 }
 
-.contactAboutBackground .contactAboutDiv .contact input[type="submit"] {
-  background-color: #7033bf;
-  color: white;
-  height: 40px;
-  width: 100px;
-  font-size: 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  margin: 40px auto;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="submit"]:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="submit"]:active {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="email"],
-.contactAboutBackground .contactAboutDiv .contact textarea {
-  background: white;
-  max-width: 500px;
-  margin-top: 30px;
-  width: 100%;
-  height: 40px;
-  -webkit-box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 0 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="email"]::-webkit-input-placeholder,
-.contactAboutBackground .contactAboutDiv .contact textarea::-webkit-input-placeholder {
-  color: #837e9f;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="email"]:-ms-input-placeholder,
-.contactAboutBackground .contactAboutDiv .contact textarea:-ms-input-placeholder {
-  color: #837e9f;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="email"]::-ms-input-placeholder,
-.contactAboutBackground .contactAboutDiv .contact textarea::-ms-input-placeholder {
-  color: #837e9f;
-}
-
-.contactAboutBackground .contactAboutDiv .contact input[type="email"]::placeholder,
-.contactAboutBackground .contactAboutDiv .contact textarea::placeholder {
-  color: #837e9f;
-}
-
-.contactAboutBackground .contactAboutDiv .contact .checkboxDiv {
-  margin-top: 20px;
-  font-family: "Montserrat";
-  font-size: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.contactAboutBackground .contactAboutDiv .contact textarea {
-  height: auto;
-  min-height: 100px;
-  max-height: 300px;
-  resize: vertical;
-  padding: 10px;
-  font-family: "Montserrat";
-}
-
 @media (max-width: 850px) {
-  .contactAboutBackground .contactAboutDiv {
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-  }
   .contactAboutBackground .contactAboutDiv > * {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1619,41 +1519,6 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .contactAboutBackground .contactAboutDiv .contact input[type="submit"] {
-    background-color: #7033bf;
-    color: white;
-    height: 30px;
-    width: 75px;
-    font-size: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    cursor: pointer;
-  }
-  .contactAboutBackground .contactAboutDiv .contact input[type="submit"]:hover {
-    -webkit-transform: scale(1.01);
-            transform: scale(1.01);
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-  .contactAboutBackground .contactAboutDiv .contact input[type="submit"]:active {
-    -webkit-transform: scale(0.99);
-            transform: scale(0.99);
-    -webkit-box-shadow: none;
-            box-shadow: none;
   }
 }
 
