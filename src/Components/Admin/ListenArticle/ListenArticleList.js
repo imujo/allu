@@ -10,7 +10,7 @@ import {
 
 function ListenArticleList(props) {
   return (
-    <List {...props}>
+    <List {...props} perPage={100}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="title" />
