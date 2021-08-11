@@ -11,11 +11,12 @@ import { getDirItems, getNumberOfLanguages } from "../AdminFunctions";
 
 const LanguagesEdit = (props) => {
   const [dirItems, setDirItems] = useState([]);
-  const [numberOfLanguages, setNumberOfLanguages] = useState(0);
+  const [numberOfLanguages, setNumberOfLanguages] = useState([]);
 
   useEffect(() => {
     getDirItems(setDirItems, "flags");
     getNumberOfLanguages(setNumberOfLanguages);
+    console.log(numberOfLanguages);
   }, []);
 
   return (
