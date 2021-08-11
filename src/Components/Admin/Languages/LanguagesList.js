@@ -7,9 +7,11 @@ import {
   DeleteButton,
 } from "react-admin";
 
+import { PostPagination } from "../AdminFunctions";
+
 function LanguagesList(props) {
   return (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="language" />

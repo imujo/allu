@@ -8,9 +8,11 @@ import {
   DeleteButton,
 } from "react-admin";
 
+import { PostPagination } from "../AdminFunctions";
+
 function ReadArticleList(props) {
   return (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="title" />

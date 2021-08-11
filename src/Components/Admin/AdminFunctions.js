@@ -1,3 +1,5 @@
+import { Pagination } from "react-admin";
+
 const createGroup = (list, key) => {
   let group = [];
   list.forEach((listElement) => {
@@ -31,3 +33,7 @@ export const getDirItems = (setDirItems, dir) => {
     .then((res) => res.json())
     .then((data) => setDirItems(createGroup(data, "")));
 };
+
+export const PostPagination = (props) => (
+  <Pagination rowsPerPageOptions={[10, 25, 50, 100, 200]} {...props} />
+);

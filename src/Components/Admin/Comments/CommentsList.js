@@ -1,10 +1,12 @@
 import React from "react";
 import { List, Datagrid, TextField, DeleteButton } from "react-admin";
 
+import { PostPagination } from "../AdminFunctions";
+
 function CommentsList(props) {
   return (
     <List {...props}>
-      <Datagrid>
+      <Datagrid pagination={<PostPagination />}>
         <TextField source="id" />
         <TextField source="text" />
         <TextField source="articleid" />

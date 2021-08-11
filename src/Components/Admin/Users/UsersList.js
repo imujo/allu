@@ -9,9 +9,11 @@ import {
   BooleanField,
 } from "react-admin";
 
+import { PostPagination } from "../AdminFunctions";
+
 function UsersList(props) {
   return (
-    <List {...props}>
+    <List {...props} pagination={<PostPagination />}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="email" />

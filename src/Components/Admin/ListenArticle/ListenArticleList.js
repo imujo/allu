@@ -6,12 +6,9 @@ import {
   DateField,
   EditButton,
   DeleteButton,
-  Pagination,
 } from "react-admin";
 
-const PostPagination = (props) => (
-  <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />
-);
+import { PostPagination } from "../AdminFunctions";
 
 function ListenArticleList(props) {
   return (

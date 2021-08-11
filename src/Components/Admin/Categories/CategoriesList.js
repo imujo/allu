@@ -7,10 +7,12 @@ import {
   DeleteButton,
 } from "react-admin";
 
+import { PostPagination } from "../AdminFunctions";
+
 function CategoriesList(props) {
   return (
     <List {...props} perPage={100}>
-      <Datagrid>
+      <Datagrid pagination={<PostPagination />}>
         <TextField source="id" />
         <TextField source="category" />
         <TextField source="imagefile" />
