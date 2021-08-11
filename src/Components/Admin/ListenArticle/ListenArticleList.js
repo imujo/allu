@@ -6,11 +6,16 @@ import {
   DateField,
   EditButton,
   DeleteButton,
+  Pagination,
 } from "react-admin";
+
+const PostPagination = (props) => (
+  <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />
+);
 
 function ListenArticleList(props) {
   return (
-    <List {...props} perPage={100}>
+    <List {...props} pagination={<PostPagination />}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="title" />
