@@ -35,7 +35,7 @@ export const getDirItems = (setDirItems, dir) => {
 };
 
 export const getNumberOfLanguages = (setNumberOfLanguages) => {
-  fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/admin/languages`)
+  fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/api/languages`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
