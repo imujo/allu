@@ -17,6 +17,12 @@
     & > * {
       padding: 40px;
     }
+    & .fb {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
   }
 }
 
